@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import type { CampaignMeta } from '@scripts/lib/types.js';
+import { readdirSync, readFileSync } from 'fs';
+
+// Read all campaign JSON files from content
+const campaignFiles = readdirSync('src/content/campaigns').filter((f) => f.endsWith('.json'));
+const campaigns: CampaignMeta[] = campaignFiles.map((f) =>
+  JSON.parse(readFileSync(`src/content/campaigns/${f}`, 'utf-8')),
+).sort((a, b) => a.cyclePosition - b.cyclePosition);
+---
+
+<BaseLayout title="Campaigns" description="Browse Arkham Horror LCG campaigns">
+  <h1>Campaigns</h1>
+  <p class="subtitle">{campaigns.length} campaigns available</p>
+
+  <div class="campaign-list">
+    {campaigns.map((campaign) => (
+      <a href={`/campaigns/${campaign.code}/`} class="card-tile campaign-item">
+        <h2>{campaign.name}</h2>
+        <p class="description">{campaign.description}</p>
+        <div class="meta">
+          <span>{campaign.scenarios.length} scenarios</span>
+          <span>Cycle {campaign.cyclePosition}</span>
+        </div>
+      </a>
+    ))}
+  </div>
+</BaseLayout>
+
+<style>
+  .subtitle {
+    color: var(--color-text-muted);
+    margin-bottom: 2rem;
+  }
+
+  .campaign-list {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .campaign-item {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .campaign-item:hover {
+    text-decoration: none;
+  }
+
+  .campaign-item h2 {
+    margin-bottom: 0.5rem;
+  }
+
+  .description {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
+  }
+
+  .meta {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+  }
+</style>

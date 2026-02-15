@@ -1,0 +1,174 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import type { CardDistribution } from '@scripts/lib/types.js';
+import distData from '../../content/stats/card-distribution.json';
+
+const dist = distData as CardDistribution;
+
+const sortedTypes = Object.entries(dist.byType).sort((a, b) => b[1] - a[1]);
+const sortedFactions = Object.entries(dist.byFaction).sort((a, b) => b[1] - a[1]);
+
+// Build cost curve table
+const allFactions = Object.keys(dist.costCurveByFaction).sort();
+const costKeys = ['0', '1', '2', '3', '4', '5', '6+'];
+
+// Build XP table
+const xpKeys = ['0', '1', '2', '3', '4', '5'];
+const xpFactions = Object.keys(dist.xpByFaction).sort();
+---
+
+<BaseLayout title="Card Distribution" description="Card distribution statistics for Arkham Horror LCG">
+  <nav class="breadcrumb">
+    <a href="/stats/">Stats</a> &rsaquo; <span>Distribution</span>
+  </nav>
+
+  <h1>Card Distribution</h1>
+
+  <div class="two-col">
+    <section>
+      <h2>By Type</h2>
+      <div class="bar-chart">
+        {sortedTypes.map(([type, count]) => (
+          <div class="bar-row">
+            <span class="bar-label">{type}</span>
+            <div class="bar-bg">
+              <div class="bar" style={`width: ${(count / sortedTypes[0][1]) * 100}%`} />
+            </div>
+            <span class="bar-value">{count}</span>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section>
+      <h2>By Faction</h2>
+      <div class="bar-chart">
+        {sortedFactions.map(([faction, count]) => (
+          <div class="bar-row">
+            <span class="bar-label">{faction}</span>
+            <div class="bar-bg">
+              <div class="bar" style={`width: ${(count / sortedFactions[0][1]) * 100}%`} />
+            </div>
+            <span class="bar-value">{count}</span>
+          </div>
+        ))}
+      </div>
+    </section>
+  </div>
+
+  <section>
+    <h2>Cost Curve by Faction</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Faction</th>
+            {costKeys.map((k) => <th>{k}</th>)}
+          </tr>
+        </thead>
+        <tbody>
+          {allFactions.map((faction) => (
+            <tr>
+              <td>{faction}</td>
+              {costKeys.map((k) => (
+                <td>{dist.costCurveByFaction[faction]?.[k] || 0}</td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>XP Distribution by Faction</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Faction</th>
+            {xpKeys.map((k) => <th>Level {k}</th>)}
+          </tr>
+        </thead>
+        <tbody>
+          {xpFactions.map((faction) => (
+            <tr>
+              <td>{faction}</td>
+              {xpKeys.map((k) => (
+                <td>{dist.xpByFaction[faction]?.[k] || 0}</td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .breadcrumb {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin-bottom: 1.5rem;
+  }
+
+  .breadcrumb span {
+    color: var(--color-text);
+  }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    .two-col {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  section {
+    margin-bottom: 2rem;
+  }
+
+  .bar-chart {
+    display: grid;
+    gap: 0.4rem;
+  }
+
+  .bar-row {
+    display: grid;
+    grid-template-columns: 100px 1fr 50px;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .bar-label {
+    font-size: 0.85rem;
+  }
+
+  .bar-bg {
+    height: 10px;
+    background: var(--color-surface);
+    border-radius: 5px;
+    overflow: hidden;
+  }
+
+  .bar {
+    height: 100%;
+    background: var(--color-accent);
+    border-radius: 5px;
+  }
+
+  .bar-value {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    text-align: right;
+  }
+
+  .table-wrap {
+    overflow-x: auto;
+  }
+</style>

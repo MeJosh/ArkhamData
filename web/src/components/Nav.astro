@@ -1,0 +1,82 @@
+---
+const currentPath = Astro.url.pathname;
+
+const links = [
+  { href: '/', label: 'Home' },
+  { href: '/cards/', label: 'Cards' },
+  { href: '/packs/', label: 'Packs' },
+  { href: '/campaigns/', label: 'Campaigns' },
+  { href: '/stats/', label: 'Stats' },
+];
+---
+
+<nav>
+  <div class="nav-inner container">
+    <a href="/" class="logo">ArkhamData</a>
+    <ul>
+      {links.map(({ href, label }) => (
+        <li>
+          <a href={href} class:list={[{ active: currentPath === href || (href !== '/' && currentPath.startsWith(href)) }]}>
+            {label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</nav>
+
+<style>
+  nav {
+    background: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+  }
+
+  .logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+
+  .logo:hover {
+    color: var(--color-accent-hover);
+    text-decoration: none;
+  }
+
+  ul {
+    display: flex;
+    list-style: none;
+    gap: 0.25rem;
+  }
+
+  li a {
+    display: block;
+    padding: 0.4rem 0.75rem;
+    border-radius: var(--radius);
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    text-decoration: none;
+    transition: color 0.15s, background 0.15s;
+  }
+
+  li a:hover {
+    color: var(--color-text);
+    background: var(--color-surface-hover);
+    text-decoration: none;
+  }
+
+  li a.active {
+    color: var(--color-accent);
+    background: var(--color-surface-hover);
+  }
+</style>

@@ -10,7 +10,8 @@
       "Bash(curl:*)",
       "Bash(python -m json.tool:*)",
       "Bash(python:*)",
-      "Bash(docker-compose ps:*)"
+      "Bash(docker-compose ps:*)",
+      "Bash(npm install)"
     ]
   }
 }

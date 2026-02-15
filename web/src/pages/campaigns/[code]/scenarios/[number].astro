@@ -1,0 +1,145 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import EncounterSetList from '../../../../components/EncounterSetList.astro';
+import CardDisplay from '../../../../components/CardDisplay.astro';
+import type { CampaignMeta, ScenarioMeta, Card } from '@scripts/lib/types.js';
+import { readdirSync, readFileSync, existsSync } from 'fs';
+
+export function getStaticPaths() {
+  const campaignFiles = readdirSync('src/content/campaigns').filter((f) => f.endsWith('.json'));
+  const paths: any[] = [];
+
+  for (const f of campaignFiles) {
+    const campaign: CampaignMeta = JSON.parse(readFileSync(`src/content/campaigns/${f}`, 'utf-8'));
+    const scenariosPath = `src/content/campaigns/${campaign.code}/scenarios.json`;
+    if (!existsSync(scenariosPath)) continue;
+
+    const scenarios: ScenarioMeta[] = JSON.parse(readFileSync(scenariosPath, 'utf-8'));
+
+    for (const scenario of scenarios) {
+      let cards: Card[] = [];
+      const cardsPath = `src/content/campaigns/${campaign.code}/scenario-${scenario.number}-cards.json`;
+      if (existsSync(cardsPath)) {
+        cards = JSON.parse(readFileSync(cardsPath, 'utf-8'));
+      }
+
+      paths.push({
+        params: { code: campaign.code, number: String(scenario.number) },
+        props: { campaign, scenario, cards },
+      });
+    }
+  }
+
+  return paths;
+}
+
+const { campaign, scenario, cards } = Astro.props as {
+  campaign: CampaignMeta;
+  scenario: ScenarioMeta;
+  cards: Card[];
+};
+
+// Group cards by type
+const cardsByType = new Map<string, Card[]>();
+for (const card of cards) {
+  const type = card.typeName || 'Other';
+  if (!cardsByType.has(type)) cardsByType.set(type, []);
+  cardsByType.get(type)!.push(card);
+}
+
+const typeOrder = ['Scenario', 'Agenda', 'Act', 'Location', 'Enemy', 'Treachery', 'Asset', 'Other'];
+const sortedTypes = [...cardsByType.entries()].sort((a, b) => {
+  const ia = typeOrder.indexOf(a[0]);
+  const ib = typeOrder.indexOf(b[0]);
+  return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
+});
+---
+
+<BaseLayout title={`${scenario.name}`} description={scenario.description}>
+  <nav class="breadcrumb">
+    <a href="/campaigns/">Campaigns</a> &rsaquo;
+    <a href={`/campaigns/${campaign.code}/`}>{campaign.name}</a> &rsaquo;
+    <span>{scenario.name}</span>
+  </nav>
+
+  <h1>
+    <span class="scenario-number">#{scenario.number}</span>
+    {scenario.name}
+  </h1>
+  <p class="description">{scenario.description}</p>
+
+  <div class="encounter-grid">
+    <EncounterSetList sets={scenario.encounterSets} />
+    {scenario.separateDecks?.map((deck) => (
+      <EncounterSetList sets={[deck.encounterSet]} label={deck.name} />
+    ))}
+    {scenario.randomEncounterSets && (
+      <EncounterSetList
+        sets={scenario.randomEncounterSets.from}
+        label={`Random (pick ${scenario.randomEncounterSets.pick})`}
+      />
+    )}
+  </div>
+
+  <section class="cards-section">
+    <h2>Cards ({cards.length} total)</h2>
+    {sortedTypes.map(([type, typeCards]) => (
+      <div class="card-type-group">
+        <h3>{type} ({typeCards.length})</h3>
+        <div class="card-grid">
+          {typeCards
+            .sort((a, b) => (a.encounterPosition ?? 0) - (b.encounterPosition ?? 0))
+            .map((card) => (
+              <CardDisplay card={card} compact />
+            ))}
+        </div>
+      </div>
+    ))}
+  </section>
+</BaseLayout>
+
+<style>
+  .breadcrumb {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin-bottom: 1.5rem;
+  }
+
+  .breadcrumb span {
+    color: var(--color-text);
+  }
+
+  .scenario-number {
+    color: var(--color-text-muted);
+    font-weight: 400;
+    margin-right: 0.25rem;
+  }
+
+  .description {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+
+  .encounter-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .cards-section {
+    margin-top: 2rem;
+  }
+
+  .card-type-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .card-type-group h3 {
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+</style>

@@ -1,0 +1,65 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CardDisplay from '../../components/CardDisplay.astro';
+import type { Pack, Card } from '@scripts/lib/types.js';
+import allPacks from '../../content/packs.json';
+import allCards from '../../content/cards.json';
+
+export function getStaticPaths() {
+  const packs = allPacks as Pack[];
+  const cards = allCards as Card[];
+  return packs.map((pack) => ({
+    params: { code: pack.code },
+    props: {
+      pack,
+      packCards: cards
+        .filter((c) => c.packCode === pack.code)
+        .sort((a, b) => (a.position ?? 0) - (b.position ?? 0)),
+    },
+  }));
+}
+
+const { pack, packCards } = Astro.props;
+---
+
+<BaseLayout title={pack.name} description={`${pack.name} - ${packCards.length} cards`}>
+  <nav class="breadcrumb">
+    <a href="/packs/">Packs</a> &rsaquo; <span>{pack.name}</span>
+  </nav>
+
+  <h1>{pack.name}</h1>
+  <p class="subtitle">
+    {packCards.length} cards &middot; Code: <code>{pack.code}</code>
+    {pack.available && <> &middot; Released: {pack.available}</>}
+  </p>
+
+  <div class="card-grid">
+    {packCards.map((card) => (
+      <CardDisplay card={card} compact />
+    ))}
+  </div>
+</BaseLayout>
+
+<style>
+  .subtitle {
+    color: var(--color-text-muted);
+    margin-bottom: 1.5rem;
+  }
+
+  .subtitle code {
+    background: var(--color-surface);
+    padding: 0.1rem 0.4rem;
+    border-radius: 3px;
+    font-size: 0.85rem;
+  }
+
+  .breadcrumb {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin-bottom: 1.5rem;
+  }
+
+  .breadcrumb span {
+    color: var(--color-text);
+  }
+</style>

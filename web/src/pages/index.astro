@@ -1,0 +1,201 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import type { Card, Pack, CampaignMeta } from '@scripts/lib/types.js';
+import allCards from '../content/cards.json';
+import allPacks from '../content/packs.json';
+import { readdirSync, readFileSync } from 'fs';
+
+const cards = allCards as Card[];
+const packs = allPacks as Pack[];
+
+const campaignFiles = readdirSync('src/content/campaigns').filter((f) => f.endsWith('.json'));
+const campaigns: CampaignMeta[] = campaignFiles.map((f) =>
+  JSON.parse(readFileSync(`src/content/campaigns/${f}`, 'utf-8')),
+);
+
+const playerCards = cards.filter((c) => !c.encounterCode);
+const encounterCards = cards.filter((c) => c.encounterCode);
+
+const factionCounts: Record<string, number> = {};
+for (const card of playerCards) {
+  const f = card.factionName || 'Unknown';
+  factionCounts[f] = (factionCounts[f] || 0) + 1;
+}
+const topFactions = Object.entries(factionCounts).sort((a, b) => b[1] - a[1]).slice(0, 6);
+---
+
+<BaseLayout title="Home" description="ArkhamData - Arkham Horror LCG data explorer and campaign analysis">
+  <div class="hero">
+    <h1>ArkhamData</h1>
+    <p>Explore cards, campaigns, and scenario analysis for Arkham Horror: The Card Game</p>
+  </div>
+
+  <div class="stat-row">
+    <div class="stat-box">
+      <div class="value">{cards.length.toLocaleString()}</div>
+      <div class="label">Total Cards</div>
+    </div>
+    <div class="stat-box">
+      <div class="value">{playerCards.length.toLocaleString()}</div>
+      <div class="label">Player Cards</div>
+    </div>
+    <div class="stat-box">
+      <div class="value">{encounterCards.length.toLocaleString()}</div>
+      <div class="label">Encounter Cards</div>
+    </div>
+    <div class="stat-box">
+      <div class="value">{packs.length}</div>
+      <div class="label">Packs</div>
+    </div>
+    <div class="stat-box">
+      <div class="value">{campaigns.length}</div>
+      <div class="label">Campaigns</div>
+    </div>
+  </div>
+
+  <div class="sections">
+    <section>
+      <h2>Campaigns</h2>
+      <div class="quick-list">
+        {campaigns.map((c) => (
+          <a href={`/campaigns/${c.code}/`} class="card-tile">
+            <strong>{c.name}</strong>
+            <span class="meta">{c.scenarios.length} scenarios</span>
+          </a>
+        ))}
+      </div>
+      <a href="/campaigns/" class="view-all">View all campaigns &rarr;</a>
+    </section>
+
+    <section>
+      <h2>Cards by Faction</h2>
+      <div class="faction-grid">
+        {topFactions.map(([faction, count]) => (
+          <div class="faction-row">
+            <span class="faction-name">{faction}</span>
+            <div class="faction-bar-bg">
+              <div
+                class="faction-bar"
+                style={`width: ${(count / topFactions[0][1]) * 100}%`}
+              />
+            </div>
+            <span class="faction-count">{count}</span>
+          </div>
+        ))}
+      </div>
+      <a href="/stats/" class="view-all">View statistics &rarr;</a>
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .hero {
+    text-align: center;
+    padding: 2rem 0 2.5rem;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    color: var(--color-text-muted);
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+  }
+
+  .stat-row {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 3rem;
+  }
+
+  .stat-box {
+    flex: 1;
+    min-width: 120px;
+  }
+
+  .sections {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .sections {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  section h2 {
+    margin-bottom: 1rem;
+  }
+
+  .quick-list {
+    display: grid;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .quick-list a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .quick-list a:hover {
+    text-decoration: none;
+  }
+
+  .quick-list .meta {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+  }
+
+  .view-all {
+    font-size: 0.85rem;
+    color: var(--color-link);
+  }
+
+  .faction-grid {
+    display: grid;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .faction-row {
+    display: grid;
+    grid-template-columns: 100px 1fr 50px;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .faction-name {
+    font-size: 0.85rem;
+  }
+
+  .faction-bar-bg {
+    height: 8px;
+    background: var(--color-surface);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .faction-bar {
+    height: 100%;
+    background: var(--color-accent);
+    border-radius: 4px;
+    transition: width 0.3s;
+  }
+
+  .faction-count {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    text-align: right;
+  }
+</style>

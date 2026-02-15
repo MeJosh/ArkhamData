@@ -1,0 +1,140 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import type { DifficultyAnalysis } from '@scripts/lib/types.js';
+import diffData from '../../content/stats/difficulty-analysis.json';
+
+const diff = diffData as DifficultyAnalysis;
+
+// Only show sets that have at least one enemy
+const setsWithEnemies = diff.encounterSets.filter((s) => s.enemyCount > 0);
+const topHardest = setsWithEnemies.slice(0, 30);
+---
+
+<BaseLayout title="Difficulty Analysis" description="Encounter set difficulty analysis for Arkham Horror LCG">
+  <nav class="breadcrumb">
+    <a href="/stats/">Stats</a> &rsaquo; <span>Difficulty</span>
+  </nav>
+
+  <h1>Difficulty Analysis</h1>
+  <p class="subtitle">
+    Encounter sets ranked by composite difficulty score
+    (average fight + evade + damage + horror of enemies)
+  </p>
+
+  <section>
+    <h2>Hardest Encounter Sets (Top 30)</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Encounter Set</th>
+            <th>Enemies</th>
+            <th>Avg Fight</th>
+            <th>Avg Evade</th>
+            <th>Avg Damage</th>
+            <th>Avg Horror</th>
+            <th>Treacheries</th>
+            <th>Total</th>
+            <th>Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          {topHardest.map((set, i) => {
+            const score = Math.round((set.avgFight + set.avgEvade + set.avgDamage + set.avgHorror) * 100) / 100;
+            return (
+              <tr>
+                <td class="rank">#{i + 1}</td>
+                <td>
+                  <strong>{set.encounterName}</strong>
+                  <span class="set-code">{set.encounterCode}</span>
+                </td>
+                <td>{set.enemyCount}</td>
+                <td>{set.avgFight}</td>
+                <td>{set.avgEvade}</td>
+                <td>{set.avgDamage}</td>
+                <td>{set.avgHorror}</td>
+                <td>{set.treacheryCount}</td>
+                <td>{set.totalCards}</td>
+                <td class="score">{score}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>All Encounter Sets ({diff.encounterSets.length})</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Encounter Set</th>
+            <th>Cards</th>
+            <th>Enemies</th>
+            <th>Treacheries</th>
+          </tr>
+        </thead>
+        <tbody>
+          {diff.encounterSets
+            .sort((a, b) => b.totalCards - a.totalCards)
+            .map((set) => (
+              <tr>
+                <td>
+                  <strong>{set.encounterName}</strong>
+                  <span class="set-code">{set.encounterCode}</span>
+                </td>
+                <td>{set.totalCards}</td>
+                <td>{set.enemyCount}</td>
+                <td>{set.treacheryCount}</td>
+              </tr>
+            ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .breadcrumb {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin-bottom: 1.5rem;
+  }
+
+  .breadcrumb span {
+    color: var(--color-text);
+  }
+
+  .subtitle {
+    color: var(--color-text-muted);
+    margin-bottom: 2rem;
+  }
+
+  section {
+    margin-bottom: 2.5rem;
+  }
+
+  .table-wrap {
+    overflow-x: auto;
+  }
+
+  .rank {
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+  }
+
+  .set-code {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    font-family: monospace;
+  }
+
+  .score {
+    font-weight: 700;
+    color: var(--color-accent);
+  }
+</style>

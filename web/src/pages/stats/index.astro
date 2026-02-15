@@ -1,0 +1,155 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import type { CardDistribution, DifficultyAnalysis } from '@scripts/lib/types.js';
+import distData from '../../content/stats/card-distribution.json';
+import diffData from '../../content/stats/difficulty-analysis.json';
+
+const dist = distData as CardDistribution;
+const diff = diffData as DifficultyAnalysis;
+
+const totalPlayer = Object.values(dist.byFaction).reduce((a, b) => a + b, 0);
+const totalEncounter = diff.encounterSets.reduce((a, b) => a + b.totalCards, 0);
+const totalEnemies = diff.encounterSets.reduce((a, b) => a + b.enemyCount, 0);
+const totalTreacheries = diff.encounterSets.reduce((a, b) => a + b.treacheryCount, 0);
+
+const sortedTraits = Object.entries(dist.traitFrequency)
+  .sort((a, b) => b[1] - a[1])
+  .slice(0, 20);
+---
+
+<BaseLayout title="Statistics" description="Card statistics and analysis for Arkham Horror LCG">
+  <h1>Statistics</h1>
+
+  <div class="stat-row">
+    <div class="stat-box">
+      <div class="value">{totalPlayer.toLocaleString()}</div>
+      <div class="label">Player Cards</div>
+    </div>
+    <div class="stat-box">
+      <div class="value">{totalEncounter.toLocaleString()}</div>
+      <div class="label">Encounter Cards</div>
+    </div>
+    <div class="stat-box">
+      <div class="value">{diff.encounterSets.length}</div>
+      <div class="label">Encounter Sets</div>
+    </div>
+    <div class="stat-box">
+      <div class="value">{totalEnemies}</div>
+      <div class="label">Enemy Cards</div>
+    </div>
+    <div class="stat-box">
+      <div class="value">{totalTreacheries}</div>
+      <div class="label">Treachery Cards</div>
+    </div>
+  </div>
+
+  <div class="sections">
+    <a href="/stats/distribution/" class="section-link card-tile">
+      <h2>Card Distribution</h2>
+      <p>Breakdowns by type, faction, cost curve, XP, and traits</p>
+    </a>
+    <a href="/stats/difficulty/" class="section-link card-tile">
+      <h2>Difficulty Analysis</h2>
+      <p>Encounter set difficulty rankings based on enemy stats</p>
+    </a>
+  </div>
+
+  <section>
+    <h2>Top 20 Traits</h2>
+    <div class="trait-grid">
+      {sortedTraits.map(([trait, count], i) => (
+        <div class="trait-row">
+          <span class="trait-rank">#{i + 1}</span>
+          <span class="trait-name">{trait}</span>
+          <div class="trait-bar-bg">
+            <div class="trait-bar" style={`width: ${(count / sortedTraits[0][1]) * 100}%`} />
+          </div>
+          <span class="trait-count">{count}</span>
+        </div>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .stat-row {
+    margin-bottom: 2rem;
+  }
+
+  .sections {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .sections {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .section-link {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .section-link:hover {
+    text-decoration: none;
+  }
+
+  .section-link h2 {
+    margin-bottom: 0.5rem;
+  }
+
+  .section-link p {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+  }
+
+  section {
+    margin-top: 2rem;
+  }
+
+  .trait-grid {
+    display: grid;
+    gap: 0.4rem;
+  }
+
+  .trait-row {
+    display: grid;
+    grid-template-columns: 40px 120px 1fr 50px;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .trait-rank {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    text-align: right;
+  }
+
+  .trait-name {
+    font-size: 0.9rem;
+    font-style: italic;
+  }
+
+  .trait-bar-bg {
+    height: 8px;
+    background: var(--color-surface);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .trait-bar {
+    height: 100%;
+    background: var(--color-accent);
+    border-radius: 4px;
+  }
+
+  .trait-count {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    text-align: right;
+  }
+</style>

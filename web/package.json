@@ -1,0 +1,21 @@
+{
+  "name": "arkham-data-web",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "fetch-data": "tsx scripts/fetch-all.ts",
+    "generate-stats": "tsx scripts/generate-stats.ts",
+    "prebuild": "npm run fetch-data && npm run generate-stats",
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^5.0.0"
+  },
+  "devDependencies": {
+    "tsx": "^4.0.0",
+    "typescript": "^5.7.0"
+  }
+}

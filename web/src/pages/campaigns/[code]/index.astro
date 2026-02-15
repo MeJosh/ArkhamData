@@ -1,0 +1,119 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import type { CampaignMeta, ScenarioMeta } from '@scripts/lib/types.js';
+import { readdirSync, readFileSync } from 'fs';
+
+export function getStaticPaths() {
+  const files = readdirSync('src/content/campaigns').filter((f) => f.endsWith('.json'));
+  return files.map((f) => {
+    const campaign: CampaignMeta = JSON.parse(readFileSync(`src/content/campaigns/${f}`, 'utf-8'));
+    let scenarios: ScenarioMeta[] = [];
+    try {
+      scenarios = JSON.parse(readFileSync(`src/content/campaigns/${campaign.code}/scenarios.json`, 'utf-8'));
+    } catch {}
+    return {
+      params: { code: campaign.code },
+      props: { campaign, scenarios },
+    };
+  });
+}
+
+const { campaign, scenarios } = Astro.props;
+---
+
+<BaseLayout title={campaign.name} description={campaign.description}>
+  <nav class="breadcrumb">
+    <a href="/campaigns/">Campaigns</a> &rsaquo; <span>{campaign.name}</span>
+  </nav>
+
+  <h1>{campaign.name}</h1>
+  <p class="description">{campaign.description}</p>
+
+  <section>
+    <h2>Scenarios</h2>
+    <div class="scenario-list">
+      {scenarios.sort((a, b) => a.number - b.number).map((scenario) => (
+        <a href={`/campaigns/${campaign.code}/scenarios/${scenario.number}/`} class="card-tile scenario-item">
+          <div class="scenario-header">
+            <span class="scenario-number">#{scenario.number}</span>
+            <h3>{scenario.name}</h3>
+          </div>
+          <p class="scenario-desc">{scenario.description}</p>
+          <div class="scenario-meta">
+            <span>{scenario.encounterSets.length} encounter sets</span>
+            {scenario.separateDecks && <span>+ {scenario.separateDecks.length} separate deck(s)</span>}
+            {scenario.randomEncounterSets && <span>+ random encounter set</span>}
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .description {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+
+  .breadcrumb {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin-bottom: 1.5rem;
+  }
+
+  .breadcrumb span {
+    color: var(--color-text);
+  }
+
+  .scenario-list {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .scenario-item {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .scenario-item:hover {
+    text-decoration: none;
+  }
+
+  .scenario-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .scenario-number {
+    background: var(--color-accent);
+    color: var(--color-bg);
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .scenario-desc {
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+  }
+
+  .scenario-meta {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+  }
+</style>

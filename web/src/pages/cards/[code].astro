@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CardDisplay from '../../components/CardDisplay.astro';
+import type { Card } from '@scripts/lib/types.js';
+import allCards from '../../content/cards.json';
+
+const cards = allCards as Card[];
+
+export function getStaticPaths() {
+  return (allCards as Card[]).map((card) => ({
+    params: { code: card.code },
+    props: { card },
+  }));
+}
+
+const { card } = Astro.props;
+---
+
+<BaseLayout title={card.name} description={`${card.name} - ${card.typeName || 'Card'} from ${card.packName || 'Arkham Horror LCG'}`}>
+  <nav class="breadcrumb">
+    <a href="/cards/">Cards</a> &rsaquo; <span>{card.name}</span>
+  </nav>
+  <CardDisplay card={card} />
+</BaseLayout>
+
+<style>
+  .breadcrumb {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin-bottom: 1.5rem;
+  }
+
+  .breadcrumb span {
+    color: var(--color-text);
+  }
+</style>

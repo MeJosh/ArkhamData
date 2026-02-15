@@ -1,0 +1,184 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import type { Card } from '@scripts/lib/types.js';
+import allCards from '../../content/cards.json';
+
+const cards = allCards as Card[];
+
+// Only include player cards (non-encounter) in the browser by default
+const playerCards = cards.filter((c) => !c.encounterCode);
+
+// Group by faction for summary
+const factionCounts: Record<string, number> = {};
+for (const card of playerCards) {
+  const faction = card.factionName || 'Unknown';
+  factionCounts[faction] = (factionCounts[faction] || 0) + 1;
+}
+
+const typeCounts: Record<string, number> = {};
+for (const card of playerCards) {
+  const type = card.typeName || 'Unknown';
+  typeCounts[type] = (typeCounts[type] || 0) + 1;
+}
+---
+
+<BaseLayout title="Cards" description="Browse all Arkham Horror LCG player cards">
+  <h1>Card Browser</h1>
+  <p class="subtitle">{playerCards.length} player cards across all packs</p>
+
+  <div class="filters">
+    <input type="text" id="search" placeholder="Search by name..." />
+    <select id="faction-filter">
+      <option value="">All Factions</option>
+      {Object.entries(factionCounts).sort((a, b) => b[1] - a[1]).map(([faction, count]) => (
+        <option value={faction}>{faction} ({count})</option>
+      ))}
+    </select>
+    <select id="type-filter">
+      <option value="">All Types</option>
+      {Object.entries(typeCounts).sort((a, b) => b[1] - a[1]).map(([type, count]) => (
+        <option value={type}>{type} ({count})</option>
+      ))}
+    </select>
+  </div>
+
+  <div id="results-count" class="results-count"></div>
+
+  <div class="card-grid" id="card-grid">
+    {playerCards.map((card) => (
+      <a
+        href={`/cards/${card.code}/`}
+        class="card-tile"
+        data-name={card.name.toLowerCase()}
+        data-faction={card.factionName || ''}
+        data-type={card.typeName || ''}
+      >
+        <div class="card-header">
+          <span class="card-name">{card.name}</span>
+          {card.factionCode && (
+            <span class={`badge badge-${card.factionCode}`}>
+              {card.factionName}
+            </span>
+          )}
+        </div>
+        <div class="card-meta">
+          {card.typeName && <span>{card.typeName}</span>}
+          {card.cost !== null && <span>Cost: {card.cost}</span>}
+          {card.xp !== null && card.xp > 0 && <span>XP: {card.xp}</span>}
+        </div>
+        {card.traits && <div class="card-traits">{card.traits}</div>}
+      </a>
+    ))}
+  </div>
+</BaseLayout>
+
+<script>
+  const search = document.getElementById('search') as HTMLInputElement;
+  const factionFilter = document.getElementById('faction-filter') as HTMLSelectElement;
+  const typeFilter = document.getElementById('type-filter') as HTMLSelectElement;
+  const grid = document.getElementById('card-grid')!;
+  const resultsCount = document.getElementById('results-count')!;
+  const cards = Array.from(grid.children) as HTMLElement[];
+
+  function applyFilters() {
+    const query = search.value.toLowerCase();
+    const faction = factionFilter.value;
+    const type = typeFilter.value;
+    let visible = 0;
+
+    for (const card of cards) {
+      const name = card.dataset.name || '';
+      const cardFaction = card.dataset.faction || '';
+      const cardType = card.dataset.type || '';
+
+      const matchName = !query || name.includes(query);
+      const matchFaction = !faction || cardFaction === faction;
+      const matchType = !type || cardType === type;
+
+      if (matchName && matchFaction && matchType) {
+        card.style.display = '';
+        visible++;
+      } else {
+        card.style.display = 'none';
+      }
+    }
+
+    resultsCount.textContent = `Showing ${visible} of ${cards.length} cards`;
+  }
+
+  search.addEventListener('input', applyFilters);
+  factionFilter.addEventListener('change', applyFilters);
+  typeFilter.addEventListener('change', applyFilters);
+  applyFilters();
+</script>
+
+<style>
+  .subtitle {
+    color: var(--color-text-muted);
+    margin-bottom: 1.5rem;
+  }
+
+  .filters {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .filters input,
+  .filters select {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    color: var(--color-text);
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--radius);
+    font-size: 0.9rem;
+  }
+
+  .filters input {
+    flex: 1;
+    min-width: 200px;
+  }
+
+  .results-count {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin-bottom: 1rem;
+  }
+
+  .card-tile {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .card-tile:hover {
+    text-decoration: none;
+  }
+
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .card-name {
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  .card-meta {
+    display: flex;
+    gap: 0.75rem;
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+  }
+
+  .card-traits {
+    font-size: 0.8rem;
+    font-style: italic;
+    color: var(--color-text-muted);
+    margin-top: 0.35rem;
+  }
+</style>

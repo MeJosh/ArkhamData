@@ -1,0 +1,236 @@
+---
+import type { Card } from '@scripts/lib/types.js';
+
+interface Props {
+  card: Card;
+  compact?: boolean;
+}
+
+const { card, compact = false } = Astro.props;
+
+function factionClass(code: string | null): string {
+  if (!code) return 'badge-neutral';
+  return `badge-${code}`;
+}
+
+const ARKHAMDB_IMG = 'https://arkhamdb.com';
+const imageUrl = card.imagesrc ? `${ARKHAMDB_IMG}${card.imagesrc}` : null;
+---
+
+{compact ? (
+  <a href={`/cards/${card.code}/`} class="card-tile compact-card">
+    <div class="compact-header">
+      <span class="card-name">{card.name}</span>
+      {card.factionCode && (
+        <span class:list={['badge', factionClass(card.factionCode)]}>
+          {card.factionName}
+        </span>
+      )}
+    </div>
+    <div class="compact-meta">
+      {card.typeName && <span>{card.typeName}</span>}
+      {card.cost !== null && <span>Cost: {card.cost}</span>}
+      {card.xp !== null && card.xp > 0 && <span>XP: {card.xp}</span>}
+      {card.traits && <span class="traits">{card.traits}</span>}
+    </div>
+  </a>
+) : (
+  <div class="card-detail">
+    <div class="card-detail-grid">
+      {imageUrl && (
+        <div class="card-image">
+          <img src={imageUrl} alt={card.name} loading="lazy" />
+        </div>
+      )}
+      <div class="card-info">
+        <h1>
+          {card.name}
+          {card.subname && <span class="subname">{card.subname}</span>}
+          {card.isUnique && <span class="unique" title="Unique">&#9733;</span>}
+        </h1>
+
+        <div class="meta-row">
+          {card.typeName && <span class="type">{card.typeName}</span>}
+          {card.factionCode && (
+            <span class:list={['badge', factionClass(card.factionCode)]}>
+              {card.factionName}
+            </span>
+          )}
+          {card.subtypeName && <span class="badge badge-neutral">{card.subtypeName}</span>}
+        </div>
+
+        {card.traits && <p class="traits">{card.traits}</p>}
+
+        <div class="stats">
+          {card.cost !== null && <span>Cost: <strong>{card.cost}</strong></span>}
+          {card.xp !== null && <span>XP: <strong>{card.xp}</strong></span>}
+          {card.health !== null && <span>Health: <strong>{card.health}{card.healthPerInvestigator ? ' per investigator' : ''}</strong></span>}
+          {card.sanity !== null && <span>Sanity: <strong>{card.sanity}</strong></span>}
+          {card.slot && <span>Slot: <strong>{card.slot}</strong></span>}
+        </div>
+
+        {(card.skillWillpower || card.skillIntellect || card.skillCombat || card.skillAgility || card.skillWild) && (
+          <div class="skills">
+            {card.skillWillpower ? <span class="skill">Will: {card.skillWillpower}</span> : null}
+            {card.skillIntellect ? <span class="skill">Int: {card.skillIntellect}</span> : null}
+            {card.skillCombat ? <span class="skill">Com: {card.skillCombat}</span> : null}
+            {card.skillAgility ? <span class="skill">Agi: {card.skillAgility}</span> : null}
+            {card.skillWild ? <span class="skill">Wild: {card.skillWild}</span> : null}
+          </div>
+        )}
+
+        {card.typeCode === 'enemy' && (
+          <div class="enemy-stats">
+            {card.enemyFight !== null && <span>Fight: <strong>{card.enemyFight}</strong></span>}
+            {card.enemyEvade !== null && <span>Evade: <strong>{card.enemyEvade}</strong></span>}
+            {card.enemyDamage !== null && <span>Damage: <strong>{card.enemyDamage}</strong></span>}
+            {card.enemyHorror !== null && <span>Horror: <strong>{card.enemyHorror}</strong></span>}
+            {card.health !== null && <span>Health: <strong>{card.health}{card.healthPerInvestigator ? ' per inv.' : ''}</strong></span>}
+          </div>
+        )}
+
+        {card.text && <div class="card-text" set:html={card.text} />}
+        {card.flavor && <p class="flavor">{card.flavor}</p>}
+
+        <div class="footer-meta">
+          {card.packName && <span>Pack: <a href={`/packs/${card.packCode}/`}>{card.packName}</a></span>}
+          {card.encounterName && <span>Encounter: {card.encounterName}</span>}
+          {card.illustrator && <span>Art: {card.illustrator}</span>}
+          {card.victory !== null && <span>Victory: {card.victory}</span>}
+        </div>
+      </div>
+    </div>
+  </div>
+)}
+
+<style>
+  .compact-card {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+
+  .compact-card:hover {
+    text-decoration: none;
+  }
+
+  .compact-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .card-name {
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  .compact-meta {
+    display: flex;
+    gap: 0.75rem;
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+  }
+
+  .compact-meta .traits {
+    font-style: italic;
+  }
+
+  .card-detail-grid {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  @media (max-width: 768px) {
+    .card-detail-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .card-image img {
+    width: 100%;
+    border-radius: var(--radius);
+  }
+
+  .subname {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    font-weight: 400;
+    margin-left: 0.5rem;
+  }
+
+  .unique {
+    color: var(--color-accent);
+    margin-left: 0.25rem;
+  }
+
+  .meta-row {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    margin-bottom: 0.75rem;
+  }
+
+  .type {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+  }
+
+  .traits {
+    font-style: italic;
+    color: var(--color-text-muted);
+    margin-bottom: 0.75rem;
+  }
+
+  .stats, .skills, .enemy-stats {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .enemy-stats {
+    background: rgba(200, 50, 50, 0.1);
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--radius);
+    border: 1px solid rgba(200, 50, 50, 0.2);
+  }
+
+  .skill {
+    background: var(--color-surface);
+    padding: 0.15rem 0.5rem;
+    border-radius: 3px;
+    font-size: 0.8rem;
+  }
+
+  .card-text {
+    background: var(--color-surface);
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius);
+    border-left: 3px solid var(--color-accent);
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
+  }
+
+  .flavor {
+    font-style: italic;
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .footer-meta {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--color-border);
+  }
+</style>

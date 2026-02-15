@@ -1,0 +1,97 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import type { Pack } from '@scripts/lib/types.js';
+import allPacks from '../../content/packs.json';
+
+const packs = (allPacks as Pack[]).sort((a, b) => {
+  const ca = a.cyclePosition ?? 999;
+  const cb = b.cyclePosition ?? 999;
+  if (ca !== cb) return ca - cb;
+  return (a.position ?? 0) - (b.position ?? 0);
+});
+
+// Group by cycle
+const cycles = new Map<number, Pack[]>();
+for (const pack of packs) {
+  const cycle = pack.cyclePosition ?? 0;
+  if (!cycles.has(cycle)) cycles.set(cycle, []);
+  cycles.get(cycle)!.push(pack);
+}
+---
+
+<BaseLayout title="Packs" description="Browse all Arkham Horror LCG card packs and expansions">
+  <h1>Card Packs</h1>
+  <p class="subtitle">{packs.length} packs</p>
+
+  {[...cycles.entries()].map(([cyclePos, cyclePacks]) => (
+    <section class="cycle">
+      <h2>Cycle {cyclePos}</h2>
+      <div class="pack-list">
+        {cyclePacks.map((pack) => (
+          <a href={`/packs/${pack.code}/`} class="card-tile pack-item">
+            <div class="pack-header">
+              <span class="pack-name">{pack.name}</span>
+              <span class="pack-code">{pack.code}</span>
+            </div>
+            <div class="pack-meta">
+              {pack.total !== null && <span>{pack.total} cards</span>}
+              {pack.available && <span>{pack.available}</span>}
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+  ))}
+</BaseLayout>
+
+<style>
+  .subtitle {
+    color: var(--color-text-muted);
+    margin-bottom: 2rem;
+  }
+
+  .cycle {
+    margin-bottom: 2rem;
+  }
+
+  .pack-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 0.75rem;
+  }
+
+  .pack-item {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .pack-item:hover {
+    text-decoration: none;
+  }
+
+  .pack-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .pack-name {
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  .pack-code {
+    font-family: monospace;
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+  }
+
+  .pack-meta {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    margin-top: 0.25rem;
+  }
+</style>
