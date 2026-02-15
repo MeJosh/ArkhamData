@@ -5,6 +5,7 @@ import { ScrapeModule } from './scrape/scrape.module';
 import { DataManagementModule } from './data-management/data-management.module';
 import { PacksModule } from './packs/packs.module';
 import { CardsModule } from './cards/cards.module';
+import { CampaignsModule } from './campaigns/campaigns.module';
 
 @Module({
   imports: [
@@ -14,6 +15,7 @@ import { CardsModule } from './cards/cards.module';
     DataManagementModule,
     PacksModule,
     CardsModule,
+    CampaignsModule,
   ],
 })
 export class AppModule {}

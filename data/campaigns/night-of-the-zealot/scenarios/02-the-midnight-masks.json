@@ -5,16 +5,16 @@
   "campaignCode": "notz",
   "description": "The citizens of Arkham are in danger. Cultists have infiltrated the town, hiding behind masks and false identities. You must uncover them before midnight.",
   "encounterSets": [
-    "The Midnight Masks",
-    "Chilling Cold",
-    "Nightgaunts",
-    "Dark Cult",
-    "Locked Doors"
+    { "name": "The Midnight Masks", "code": "arkham" },
+    { "name": "Chilling Cold", "code": "chilling_cold" },
+    { "name": "Nightgaunts", "code": "nightgaunts" },
+    { "name": "Dark Cult", "code": "pentagram" },
+    { "name": "Locked Doors", "code": "locked_doors" }
   ],
   "separateDecks": [
     {
       "name": "Cultist deck",
-      "encounterSet": "Cult of Umôrdhoth"
+      "encounterSet": { "name": "Cult of Umôrdhoth", "code": "cultists" }
     }
   ]
 }

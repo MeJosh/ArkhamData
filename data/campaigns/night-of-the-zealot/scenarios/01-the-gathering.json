@@ -5,11 +5,11 @@
   "campaignCode": "notz",
   "description": "You are barely settled in for the evening when you hear the sound of strange chanting coming from your parlor. Rushing to investigate, you find a gate has opened in the floor, and otherworldly creatures pour through.",
   "encounterSets": [
-    "The Gathering",
-    "Rats",
-    "Ghouls",
-    "Striking Fear",
-    "Ancient Evils",
-    "Chilling Cold"
+    { "name": "The Gathering", "code": "torch" },
+    { "name": "Rats", "code": "rats" },
+    { "name": "Ghouls", "code": "ghouls" },
+    { "name": "Striking Fear", "code": "striking_fear" },
+    { "name": "Ancient Evils", "code": "ancient_evils" },
+    { "name": "Chilling Cold", "code": "chilling_cold" }
   ]
 }

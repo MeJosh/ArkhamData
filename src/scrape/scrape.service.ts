@@ -186,6 +186,10 @@ export class ScrapeService {
       victory: (raw['victory'] as number) ?? null,
       restrictions: raw['restrictions'] ?? null,
       errataDate: (raw['errata_date'] as string) ?? null,
+      encounterCode: (raw['encounter_code'] as string) ?? null,
+      encounterName: (raw['encounter_name'] as string) ?? null,
+      encounterPosition: (raw['encounter_position'] as number) ?? null,
+      spoiler: (raw['spoiler'] as number) ?? null,
     };
   }
 }

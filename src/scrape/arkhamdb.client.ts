@@ -19,10 +19,14 @@ export class ArkhamDbClient {
   }
 
   async fetchAllCards(): Promise<Record<string, unknown>[]> {
-    this.logger.log(`Fetching all cards from ${this.baseUrl}/cards/`);
+    this.logger.log(
+      `Fetching all cards (with encounter) from ${this.baseUrl}/cards/`,
+    );
     const data = await lastValueFrom(
       this.httpService
-        .get<Record<string, unknown>[]>(`${this.baseUrl}/cards/`)
+        .get<Record<string, unknown>[]>(`${this.baseUrl}/cards/`, {
+          params: { encounter: 1 },
+        })
         .pipe(map((res) => res.data)),
     );
     this.logger.log(`Fetched ${data.length} cards`);

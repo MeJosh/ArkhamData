@@ -181,6 +181,18 @@ export class Card {
   @Column({ name: 'errata_date', type: 'varchar', nullable: true })
   errataDate!: string | null;
 
+  @Column({ name: 'encounter_code', type: 'varchar', nullable: true })
+  encounterCode!: string | null;
+
+  @Column({ name: 'encounter_name', type: 'varchar', nullable: true })
+  encounterName!: string | null;
+
+  @Column({ name: 'encounter_position', type: 'int', nullable: true })
+  encounterPosition!: number | null;
+
+  @Column({ type: 'int', nullable: true })
+  spoiler!: number | null;
+
   @CreateDateColumn({ name: 'created_at' })
   createdAt!: Date;
 
