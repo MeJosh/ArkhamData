@@ -1,0 +1,20 @@
+{
+  "name": "The Midnight Masks",
+  "number": 2,
+  "code": "the-midnight-masks",
+  "campaignCode": "notz",
+  "description": "The citizens of Arkham are in danger. Cultists have infiltrated the town, hiding behind masks and false identities. You must uncover them before midnight.",
+  "encounterSets": [
+    "The Midnight Masks",
+    "Chilling Cold",
+    "Nightgaunts",
+    "Dark Cult",
+    "Locked Doors"
+  ],
+  "separateDecks": [
+    {
+      "name": "Cultist deck",
+      "encounterSet": "Cult of Umôrdhoth"
+    }
+  ]
+}

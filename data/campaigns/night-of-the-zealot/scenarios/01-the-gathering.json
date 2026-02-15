@@ -1,0 +1,15 @@
+{
+  "name": "The Gathering",
+  "number": 1,
+  "code": "the-gathering",
+  "campaignCode": "notz",
+  "description": "You are barely settled in for the evening when you hear the sound of strange chanting coming from your parlor. Rushing to investigate, you find a gate has opened in the floor, and otherworldly creatures pour through.",
+  "encounterSets": [
+    "The Gathering",
+    "Rats",
+    "Ghouls",
+    "Striking Fear",
+    "Ancient Evils",
+    "Chilling Cold"
+  ]
+}

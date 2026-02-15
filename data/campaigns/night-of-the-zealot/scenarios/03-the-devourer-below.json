@@ -1,0 +1,23 @@
+{
+  "name": "The Devourer Below",
+  "number": 3,
+  "code": "the-devourer-below",
+  "campaignCode": "notz",
+  "description": "The ritual must be stopped. You venture into the woods south of Arkham, where the cult prepares to summon an Ancient One from beyond the veil.",
+  "encounterSets": [
+    "The Devourer Below",
+    "Ancient Evils",
+    "Striking Fear",
+    "Ghouls",
+    "Dark Cult"
+  ],
+  "randomEncounterSets": {
+    "pick": 1,
+    "from": [
+      "Agents of Yog-Sothoth",
+      "Agents of Shub-Niggurath",
+      "Agents of Cthulhu",
+      "Agents of Hastur"
+    ]
+  }
+}
