@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:arkhamdb.com)",
+      "Bash(dir /a \"c:\\\\Users\\\\Josh\\\\Projects\\\\ArkhamData\")",
+      "Bash(npx nest build:*)",
+      "Bash(docker-compose down:*)",
+      "Bash(docker-compose up:*)",
+      "Bash(docker-compose logs:*)"
+    ]
+  }
+}
