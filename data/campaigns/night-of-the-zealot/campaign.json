@@ -1,0 +1,25 @@
+{
+  "name": "Night of the Zealot",
+  "code": "notz",
+  "description": "The introductory campaign for Arkham Horror: The Card Game, included in the Core Set. Investigate strange occurrences in Arkham as cultists threaten to tear open a rift between worlds.",
+  "cyclePosition": 1,
+  "packCodes": ["core", "rcore"],
+  "scenarios": [
+    {
+      "name": "The Gathering",
+      "number": 1,
+      "description": "You are barely settled in for the evening when you hear the sound of strange chanting coming from your parlor. Rushing to investigate, you find a gate has opened in the floor, and otherworldly creatures pour through."
+    },
+    {
+      "name": "The Midnight Masks",
+      "number": 2,
+      "description": "The citizens of Arkham are in danger. Cultists have infiltrated the town, hiding behind masks and false identities. You must uncover them before midnight."
+    },
+    {
+      "name": "The Devourer Below",
+      "number": 3,
+      "description": "The ritual must be stopped. You venture into the woods south of Arkham, where the cult prepares to summon an Ancient One from beyond the veil."
+    }
+  ],
+  "campaignGuide": "guides/night-of-the-zealot-campaign-guide.pdf"
+}

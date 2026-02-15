@@ -1,0 +1,169 @@
+[
+  {
+    "pack_code": "pap",
+    "pack_name": "Pistols and Pearls",
+    "type_code": "investigator",
+    "type_name": "Investigator",
+    "faction_code": "rogue",
+    "faction_name": "Rogue",
+    "alternate_of_code": "02003",
+    "alternate_of_name": "Jenny Barnes",
+    "position": 84,
+    "exceptional": false,
+    "myriad": false,
+    "code": "90084",
+    "name": "Jenny Barnes",
+    "real_name": "Jenny Barnes",
+    "subname": "The Dilettante",
+    "text": "[reaction] After your turn begins: Play a [[Talent]] asset, reducing its cost by 1.\n[fast] Discard a [[Talent]] asset you control: Gain resources equal to that asset's printed cost. (Limit 5 resources per round.)\n[elder_sign] effect: +0. If you succeed, gain 3 resources.",
+    "real_text": "[reaction] After your turn begins: Play a [[Talent]] asset, reducing its cost by 1.\n[fast] Discard a [[Talent]] asset you control: Gain resources equal to that asset's printed cost. (Limit 5 resources per round.)\n[elder_sign] effect: +0. If you succeed, gain 3 resources.",
+    "quantity": 1,
+    "skill_willpower": 3,
+    "skill_intellect": 3,
+    "skill_combat": 3,
+    "skill_agility": 3,
+    "health": 8,
+    "health_per_investigator": false,
+    "sanity": 7,
+    "deck_limit": 1,
+    "traits": "Drifter. Socialite.",
+    "real_traits": "Drifter. Socialite.",
+    "deck_requirements": {
+      "size": 30,
+      "card": {
+        "02010": {
+          "90085": "90085",
+          "98002": "98002",
+          "02010": "02010"
+        },
+        "02011": {
+          "90086": "90086",
+          "98003": "98003",
+          "02011": "02011"
+        }
+      },
+      "random": [
+        {
+          "target": "subtype",
+          "value": "basicweakness"
+        }
+      ]
+    },
+    "deck_options": [
+      {
+        "faction": [
+          "neutral"
+        ],
+        "level": {
+          "min": 0,
+          "max": 5
+        }
+      },
+      {
+        "faction": [
+          "rogue"
+        ],
+        "level": {
+          "min": 0,
+          "max": 3
+        }
+      },
+      {
+        "trait": [
+          "talent"
+        ],
+        "level": {
+          "min": 0,
+          "max": 5
+        },
+        "permanent": false,
+        "limit": 10
+      }
+    ],
+    "flavor": "\"Oh honey, I'm making this up as I go along.\"",
+    "illustrator": "Tony Foti",
+    "is_unique": true,
+    "permanent": false,
+    "double_sided": true,
+    "back_text": "<b>Deck Size</b>: 30.\n<b>Deckbuilding Options</b>: Rogue cards ([rogue]) level 0-3, Neutral cards level 0-5, up to 10 other non-permanent [[Talent]] cards level 0-5.\n<b>Deckbuilding Requirements</b> (do not count toward deck size): Jenny's Twin .45s, Searching for Izzie, 1 random basic weakness.",
+    "back_flavor": "Jenny Barnes has spent the majority of her young life in pursuit of creature comforts, fine dining, and the latest fashions. That all changed when she received a letter from her sister, Isabelle. In this letter, Isabelle confessed that mysterious forces were aligning against her and that she feared she may fall victim to some paranormal threat. It was the last letter Jenny received from her beloved sister. Jenny has since returned to the States to track down and investigate all occult occurrences she can find. Hardly a wilting flower, she has proven herself a crack shot as well as a fearless and clever investigator of the unknown. Until Isabelle's disappearance is explained, Jenny will never relent in her search.",
+    "octgn_id": "f51dbc8c-243d-4391-98bd-e2154eb4f57c",
+    "url": "https://arkhamdb.com/card/90084",
+    "imagesrc": "/bundles/cards/90084.jpg",
+    "backimagesrc": "/bundles/cards/90084b.jpg"
+  },
+  {
+    "pack_code": "pap",
+    "pack_name": "Pistols and Pearls",
+    "type_code": "asset",
+    "type_name": "Asset",
+    "faction_code": "neutral",
+    "faction_name": "Neutral",
+    "position": 85,
+    "exceptional": false,
+    "myriad": false,
+    "code": "90085",
+    "name": "Jenny's Twin .45s",
+    "real_name": "Jenny's Twin .45s",
+    "subname": "A Perfect Fit",
+    "cost": -2,
+    "text": "Jenny Barnes deck only. Advanced. Uses (X ammo).\n[action] Spend 1 ammo: <b>Fight.</b> You get +2 [combat] for this attack. This attack deals +1 damage.\n[reaction] After you defeat an enemy using the above ability, exhaust Jenny's Twin .45s: Gain resources equal to that enemy's printed health.",
+    "real_text": "Jenny Barnes deck only. Advanced. Uses (X ammo).\n[action] Spend 1 ammo: <b>Fight.</b> You get +2 [combat] for this attack. This attack deals +1 damage.\n[reaction] After you defeat an enemy using the above ability, exhaust Jenny's Twin .45s: Gain resources equal to that enemy's printed health.",
+    "quantity": 1,
+    "skill_agility": 1,
+    "skill_wild": 2,
+    "health_per_investigator": false,
+    "deck_limit": 1,
+    "slot": "Hand x2",
+    "real_slot": "Hand x2",
+    "traits": "Item. Weapon. Firearm.",
+    "real_traits": "Item. Weapon. Firearm.",
+    "restrictions": {
+      "investigator": {
+        "02003": "02003"
+      }
+    },
+    "illustrator": "John Pacer",
+    "is_unique": true,
+    "permanent": false,
+    "double_sided": false,
+    "octgn_id": "495cafd5-8746-45f9-8b3e-5c960e83309e",
+    "url": "https://arkhamdb.com/card/90085",
+    "imagesrc": "/bundles/cards/90085.jpg"
+  },
+  {
+    "pack_code": "pap",
+    "pack_name": "Pistols and Pearls",
+    "type_code": "treachery",
+    "type_name": "Treachery",
+    "subtype_code": "weakness",
+    "subtype_name": "Weakness",
+    "faction_code": "neutral",
+    "faction_name": "Neutral",
+    "position": 86,
+    "exceptional": false,
+    "myriad": false,
+    "code": "90086",
+    "name": "Searching for Izzie",
+    "real_name": "Searching for Izzie",
+    "text": "Advanced.\n<b>Revelation</b> - Attach Searching for Izzie to the location farthest from you. Attached location gets +2 shroud.\n[action] [action]: <b>Investigate.</b> If you succeed, instead of discovering clues, discard Searching for Izzie.\n<b>Forced</b> - When the game ends, if Searching for Izzie is in play: You suffer 1 mental trauma.",
+    "real_text": "Advanced.\n<b>Revelation</b> - Attach Searching for Izzie to the location farthest from you. Attached location gets +2 shroud.\n[action] [action]: <b>Investigate.</b> If you succeed, instead of discovering clues, discard Searching for Izzie.\n<b>Forced</b> - When the game ends, if Searching for Izzie is in play: You suffer 1 mental trauma.",
+    "quantity": 1,
+    "health_per_investigator": false,
+    "deck_limit": 1,
+    "traits": "Task.",
+    "real_traits": "Task.",
+    "restrictions": {
+      "investigator": {
+        "02003": "02003"
+      }
+    },
+    "illustrator": "Jeff Lee Johnson",
+    "is_unique": false,
+    "permanent": false,
+    "double_sided": false,
+    "octgn_id": "b075ca7b-ab45-45d3-9063-71f460dd2066",
+    "url": "https://arkhamdb.com/card/90086",
+    "imagesrc": "/bundles/cards/90086.jpg"
+  }
+]

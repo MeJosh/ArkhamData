@@ -1,0 +1,162 @@
+[
+  {
+    "pack_code": "bad",
+    "pack_name": "Bad Blood",
+    "type_code": "investigator",
+    "type_name": "Investigator",
+    "faction_code": "mystic",
+    "faction_name": "Mystic",
+    "alternate_of_code": "01004",
+    "alternate_of_name": "Agnes Baker",
+    "position": 17,
+    "exceptional": false,
+    "myriad": false,
+    "code": "90017",
+    "name": "Agnes Baker",
+    "real_name": "Agnes Baker",
+    "subname": "The Waitress",
+    "text": "As an additional cost to play a [[Spell]] event, you may take 1 damage. If you do, reduce the cost to play that event by 2, and you may shuffle that event back into your deck instead of discarding it.\n[elder_sign] effect: +1. You may heal 1 damage.",
+    "real_text": "As an additional cost to play a [[Spell]] event, you may take 1 damage. If you do, reduce the cost to play that event by 2, and you may shuffle that event back into your deck instead of discarding it.\n[elder_sign] effect: +1. You may heal 1 damage.",
+    "quantity": 1,
+    "skill_willpower": 5,
+    "skill_intellect": 2,
+    "skill_combat": 2,
+    "skill_agility": 3,
+    "health": 8,
+    "health_per_investigator": false,
+    "sanity": 6,
+    "deck_limit": 1,
+    "traits": "Sorcerer.",
+    "real_traits": "Sorcerer.",
+    "deck_requirements": {
+      "size": 25,
+      "card": {
+        "01012": {
+          "90018": "90018",
+          "01012": "01012"
+        },
+        "01013": {
+          "90019": "90019",
+          "01013": "01013"
+        }
+      },
+      "random": [
+        {
+          "target": "subtype",
+          "value": "basicweakness"
+        }
+      ]
+    },
+    "deck_options": [
+      {
+        "faction": [
+          "mystic",
+          "neutral"
+        ],
+        "level": {
+          "min": 0,
+          "max": 5
+        }
+      },
+      {
+        "trait": [
+          "spell",
+          "occult"
+        ],
+        "level": {
+          "min": 0,
+          "max": 3
+        }
+      }
+    ],
+    "flavor": "\"The magic is in my blood.\nCoursing through my veins.\nPumping through my heart.\"",
+    "illustrator": "Magali Villeneuve",
+    "is_unique": true,
+    "permanent": false,
+    "double_sided": true,
+    "back_text": "<b>Deck size</b>: 25.\n<b>Deckbuilding Options</b>: Mystic cards ([mystic]) level 0-5, [[Spell]] cards level 0-3, [[Occult]] cards level 0-3, Neutral cards level 0-5.\n<b>Deckbuilding Requirements</b> (do not count toward deck size): Heirloom of Hyperborea, Dark Memory, 1 random basic weakness.\n<b>Additional Options</b>: When you upgrade a [[Spell]] card, you may instead pay the full experience cost of the higher level version and leave the lower level version in your deck (it does not count towards your deck size or the number of copies of that card in your deck).",
+    "back_flavor": "Agnes Baker may be just an unassuming waitress in this life, but in a previous life, she had been a powerful witch. It began when she found a strange artifact - a key of some kind - in a dusty collection of family belongings in her attic. When she touched it, the memories came flooding back, along with one word: \"Hyperborea.\"",
+    "octgn_id": "0ef49985-b5cf-4873-9000-ecc3a511297d",
+    "url": "https://arkhamdb.com/card/90017",
+    "imagesrc": "/bundles/cards/90017.png",
+    "backimagesrc": "/bundles/cards/90017b.png"
+  },
+  {
+    "pack_code": "bad",
+    "pack_name": "Bad Blood",
+    "type_code": "asset",
+    "type_name": "Asset",
+    "faction_code": "neutral",
+    "faction_name": "Neutral",
+    "position": 18,
+    "exceptional": false,
+    "myriad": false,
+    "code": "90018",
+    "name": "Heirloom of Hyperborea",
+    "real_name": "Heirloom of Hyperborea",
+    "subname": "Artifact from Another Life",
+    "cost": 3,
+    "text": "Agnes Baker deck only. Advanced.\nOnly damage and/or horror from player card effects can be assigned to Heirloom of Hyperborea.\n[reaction] After you play a [[Spell]] card: Draw 1 card.",
+    "real_text": "Agnes Baker deck only. Advanced.\nOnly damage and/or horror from player card effects can be assigned to Heirloom of Hyperborea.\n[reaction] After you play a [[Spell]] card: Draw 1 card.",
+    "quantity": 1,
+    "skill_willpower": 1,
+    "skill_combat": 1,
+    "skill_wild": 2,
+    "health": 3,
+    "health_per_investigator": false,
+    "sanity": 3,
+    "deck_limit": 1,
+    "slot": "Accessory",
+    "real_slot": "Accessory",
+    "traits": "Item. Relic.",
+    "real_traits": "Item. Relic.",
+    "restrictions": {
+      "investigator": {
+        "01004": "01004"
+      }
+    },
+    "illustrator": "Dani Hartel",
+    "is_unique": true,
+    "permanent": false,
+    "double_sided": false,
+    "octgn_id": "e95b2d00-fe2e-41e6-9d82-b3223cfb3483",
+    "url": "https://arkhamdb.com/card/90018",
+    "imagesrc": "/bundles/cards/90018.png"
+  },
+  {
+    "pack_code": "bad",
+    "pack_name": "Bad Blood",
+    "type_code": "event",
+    "type_name": "Event",
+    "subtype_code": "weakness",
+    "subtype_name": "Weakness",
+    "faction_code": "neutral",
+    "faction_name": "Neutral",
+    "position": 19,
+    "exceptional": false,
+    "myriad": false,
+    "code": "90019",
+    "name": "Dark Memory",
+    "real_name": "Dark Memory",
+    "cost": 4,
+    "text": "Advanced.\nPlace 1 doom on the current agenda. This effect can cause the current agenda to advance.\n<b>Forced</b> - If Dark Memory is in your hand at the end of your turn, reveal it and take 2 horror.",
+    "real_text": "Advanced.\nPlace 1 doom on the current agenda. This effect can cause the current agenda to advance.\n<b>Forced</b> - If Dark Memory is in your hand at the end of your turn, reveal it and take 2 horror.",
+    "quantity": 1,
+    "health_per_investigator": false,
+    "deck_limit": 1,
+    "traits": "Spell.",
+    "real_traits": "Spell.",
+    "restrictions": {
+      "investigator": {
+        "01004": "01004"
+      }
+    },
+    "illustrator": "Falk",
+    "is_unique": false,
+    "permanent": false,
+    "double_sided": false,
+    "octgn_id": "e9accdd5-fa09-4648-a0f2-1a6599b1311f",
+    "url": "https://arkhamdb.com/card/90019",
+    "imagesrc": "/bundles/cards/90019.png"
+  }
+]

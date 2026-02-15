@@ -1,0 +1,182 @@
+[
+  {
+    "pack_code": "aof",
+    "pack_name": "Aura of Faith",
+    "type_code": "investigator",
+    "type_name": "Investigator",
+    "faction_code": "mystic",
+    "faction_name": "Mystic",
+    "alternate_of_code": "04004",
+    "alternate_of_name": "Father Mateo",
+    "position": 81,
+    "exceptional": false,
+    "myriad": false,
+    "code": "90081",
+    "name": "Father Mateo",
+    "real_name": "Father Mateo",
+    "subname": "The Priest",
+    "text": "[fast] During your turn: Seal a [bless] token on an investigator at your location with no [bless] token sealed on them. (Limit once per round.)\n[reaction] When an investigator would reveal a chaos token: Resolve the [bless] token sealed on them instead. Release that token.\n[elder_sign] effect: +1. Resolve Father Mateo's [fast] ability, ignoring its limit.",
+    "real_text": "[fast] During your turn: Seal a [bless] token on an investigator at your location with no [bless] token sealed on them. (Limit once per round.)\n[reaction] When an investigator would reveal a chaos token: Resolve the [bless] token sealed on them instead. Release that token.\n[elder_sign] effect: +1. Resolve Father Mateo's [fast] ability, ignoring its limit.",
+    "quantity": 1,
+    "skill_willpower": 4,
+    "skill_intellect": 3,
+    "skill_combat": 2,
+    "skill_agility": 3,
+    "health": 6,
+    "health_per_investigator": false,
+    "sanity": 8,
+    "deck_limit": 1,
+    "traits": "Believer. Warden.",
+    "real_traits": "Believer. Warden.",
+    "deck_requirements": {
+      "size": 30,
+      "card": {
+        "04013": {
+          "90082": "90082",
+          "04013": "04013"
+        },
+        "04014": {
+          "90083": "90083",
+          "04014": "04014"
+        }
+      },
+      "random": [
+        {
+          "target": "subtype",
+          "value": "basicweakness"
+        }
+      ]
+    },
+    "deck_options": [
+      {
+        "faction": [
+          "mystic"
+        ],
+        "level": {
+          "min": 0,
+          "max": 3
+        }
+      },
+      {
+        "trait": [
+          "blessed"
+        ],
+        "level": {
+          "min": 0,
+          "max": 5
+        }
+      },
+      {
+        "faction": [
+          "neutral"
+        ],
+        "level": {
+          "min": 0,
+          "max": 5
+        }
+      },
+      {
+        "tag": [
+          "se"
+        ],
+        "level": {
+          "min": 0,
+          "max": 5
+        },
+        "limit": 5
+      }
+    ],
+    "illustrator": "Magali Villeneuve",
+    "is_unique": true,
+    "permanent": false,
+    "double_sided": true,
+    "back_text": "<b>Deck Size:</b> 30.\n<b>Deckbuilding Options:</b> Mystic cards ([mystic]) level 0-3, [[Blessed]] cards level 0-5, Neutral cards level 0-5, up to 5 other cards with \"seal\" level 0-5.\n<b>Deckbuilding Requirements</b> (do not count toward deck size): The Codex of Ages, Serpents of Yig, 1 random basic weakness.\n",
+    "back_flavor": "Mateo Castile's life has not been easy since he became a priest. Recent decades in Mexico have been wracked with instability and conflict. Father Mateo struggled to balance his faith with the pragmatic concerns of preaching when the law told him he must not. But this is not what has assaulted Mateo's faith at its core. The nearby murders and kidnappings were not politically motivated, as he had suspected. A gruesome and horrid cult thrives at the heart of the brewing war. How, Mateo wonders, could a kind and loving God allow what he saw that night to exist?",
+    "octgn_id": "89989f91-5fc3-4fe8-9205-00469bfc4285",
+    "url": "https://arkhamdb.com/card/90081",
+    "imagesrc": "/bundles/cards/90081.jpg",
+    "backimagesrc": "/bundles/cards/90081b.jpg"
+  },
+  {
+    "pack_code": "aof",
+    "pack_name": "Aura of Faith",
+    "type_code": "asset",
+    "type_name": "Asset",
+    "faction_code": "neutral",
+    "faction_name": "Neutral",
+    "position": 82,
+    "exceptional": false,
+    "myriad": false,
+    "code": "90082",
+    "name": "The Codex of Ages",
+    "real_name": "The Codex of Ages",
+    "subname": "finis omnium nunc est",
+    "cost": 2,
+    "text": "Father Mateo deck only. Advanced. Seal ([elder_sign] or up to 3 [bless]).\nYou get +1 to each of your skills while there is a token sealed here.\n[reaction] When an investigator at your location would reveal a chaos token from the chaos bag: That investigator resolves a token sealed here instead, then releases that token. (Limit once per test.)",
+    "real_text": "Father Mateo deck only. Advanced. Seal ([elder_sign] or up to 3 [bless]).\nYou get +1 to each of your skills while there is a token sealed here.\n[reaction] When an investigator at your location would reveal a chaos token from the chaos bag: That investigator resolves a token sealed here instead, then releases that token. (Limit once per test.)",
+    "quantity": 1,
+    "skill_willpower": 1,
+    "skill_intellect": 1,
+    "skill_wild": 1,
+    "health_per_investigator": false,
+    "deck_limit": 1,
+    "slot": "Hand",
+    "real_slot": "Hand",
+    "traits": "Item. Relic. Tome. Blessed.",
+    "real_traits": "Item. Relic. Tome. Blessed.",
+    "tags": "se.",
+    "restrictions": {
+      "investigator": {
+        "04004": "04004"
+      }
+    },
+    "illustrator": "Andreia Ugrai",
+    "is_unique": true,
+    "permanent": false,
+    "double_sided": false,
+    "octgn_id": "f3d29f52-cb67-4373-bdda-304f3e6087fc",
+    "url": "https://arkhamdb.com/card/90082",
+    "imagesrc": "/bundles/cards/90082.jpg"
+  },
+  {
+    "pack_code": "aof",
+    "pack_name": "Aura of Faith",
+    "type_code": "enemy",
+    "type_name": "Enemy",
+    "subtype_code": "weakness",
+    "subtype_name": "Weakness",
+    "faction_code": "neutral",
+    "faction_name": "Neutral",
+    "position": 83,
+    "exceptional": false,
+    "myriad": false,
+    "code": "90083",
+    "name": "Serpents of Yig",
+    "real_name": "Serpents of Yig",
+    "text": "Advanced. <b>Prey</b> - Father Mateo only. Hunter.\n<b>Revelation</b> - Search the chaos bag and all play areas for the [elder_sign] token and each [bless] token and seal them on Serpents of Yig.",
+    "real_text": "Advanced. <b>Prey</b> - Father Mateo only. Hunter.\n<b>Revelation</b> - Search the chaos bag and all play areas for the [elder_sign] token and each [bless] token and seal them on Serpents of Yig.",
+    "quantity": 1,
+    "health": 4,
+    "health_per_investigator": false,
+    "enemy_damage": 1,
+    "enemy_horror": 1,
+    "enemy_fight": 3,
+    "enemy_evade": 3,
+    "deck_limit": 1,
+    "traits": "Humanoid. Monster. Serpent.",
+    "real_traits": "Humanoid. Monster. Serpent.",
+    "tags": "se.",
+    "restrictions": {
+      "investigator": {
+        "04004": "04004"
+      }
+    },
+    "illustrator": "Matthew Cowdery",
+    "is_unique": false,
+    "permanent": false,
+    "double_sided": false,
+    "octgn_id": "9c611746-9801-4d28-b708-3bc4d9c9cd9b",
+    "url": "https://arkhamdb.com/card/90083",
+    "imagesrc": "/bundles/cards/90083.jpg"
+  }
+]

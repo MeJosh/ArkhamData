@@ -1,0 +1,177 @@
+[
+  {
+    "pack_code": "rop",
+    "pack_name": "Relics of the Past",
+    "type_code": "investigator",
+    "type_name": "Investigator",
+    "faction_code": "rogue",
+    "faction_name": "Rogue",
+    "alternate_of_code": "08007",
+    "alternate_of_name": "Monterey Jack",
+    "position": 62,
+    "exceptional": false,
+    "myriad": false,
+    "code": "90062",
+    "name": "Monterey Jack",
+    "real_name": "Monterey Jack",
+    "subname": "The Archaeologist",
+    "text": "[reaction] After you discover the last clue at your location: Search the top X cards of your deck for a [[Charm]] or [[Relic]] asset and play it, reducing its cost by X. X is the printed shroud of your location. Shuffle your deck. (Limit once per round.)\n[elder_sign] effect: +1. Gain 1 resource for each [[Charm]] asset and each [[Relic]] asset you control.",
+    "real_text": "[reaction] After you discover the last clue at your location: Search the top X cards of your deck for a [[Charm]] or [[Relic]] asset and play it, reducing its cost by X. X is the printed shroud of your location. Shuffle your deck. (Limit once per round.)\n[elder_sign] effect: +1. Gain 1 resource for each [[Charm]] asset and each [[Relic]] asset you control.",
+    "quantity": 1,
+    "skill_willpower": 1,
+    "skill_intellect": 4,
+    "skill_combat": 2,
+    "skill_agility": 5,
+    "health": 8,
+    "health_per_investigator": false,
+    "sanity": 6,
+    "deck_limit": 1,
+    "traits": "Wayfarer.",
+    "real_traits": "Wayfarer.",
+    "deck_requirements": {
+      "size": 30,
+      "card": {
+        "08008": {
+          "90063": "90063",
+          "08008": "08008"
+        },
+        "08009": {
+          "90064": "90064",
+          "08009": "08009"
+        }
+      },
+      "random": [
+        {
+          "target": "subtype",
+          "value": "basicweakness"
+        }
+      ]
+    },
+    "deck_options": [
+      {
+        "faction": [
+          "rogue"
+        ],
+        "level": {
+          "min": 0,
+          "max": 3
+        }
+      },
+      {
+        "trait": [
+          "charm",
+          "relic"
+        ],
+        "level": {
+          "min": 0,
+          "max": 4
+        }
+      },
+      {
+        "faction": [
+          "neutral"
+        ],
+        "level": {
+          "min": 0,
+          "max": 5
+        }
+      },
+      {
+        "faction": [
+          "seeker"
+        ],
+        "level": {
+          "min": 0,
+          "max": 0
+        },
+        "limit": 5,
+        "error": "You cannot have more than 5 level 0 Seeker cards"
+      }
+    ],
+    "flavor": "\"You call this archaeology?\"",
+    "illustrator": "Tony Foti",
+    "is_unique": true,
+    "permanent": false,
+    "double_sided": true,
+    "back_text": "<b>Deck Size</b>: 30.\n<b>Deckbuilding Options</b>: Rogue cards ([rogue]) level 0-3, [[Charm]] and [[Relic]] cards level 0-4, Neutral cards level 0-5, up to 5 other Seeker cards ([seeker]) level 0.\n<b>Deckbuilding Requirements</b> (do not count toward deck size): Trusty Bullwhip, Buried Secrets, 1 random basic weakness.",
+    "back_flavor": "Young Jack traveled the world with his father’s archaeological expeditions. Now a globe-trotting treasure hunter and an accomplished archaeologist in his own right, “Monterey” follows in his father’s footsteps, securing the treasures of ancient civilizations and lost cultures. But after discovering a silver pendant with a familiar symbol on it, Monterey must explore his own past. Years ago, his father was found murdered with the very same sigil carved onto his forehead. The image has haunted Monterey’s dreams ever since. But he’s getting close. He won’t stop until he solves the mystery of his father’s murder... no matter what it takes.",
+    "octgn_id": "702988dc-f488-48d1-98a3-f1238ca59526",
+    "url": "https://arkhamdb.com/card/90062",
+    "imagesrc": "/bundles/cards/90062.jpg",
+    "backimagesrc": "/bundles/cards/90062b.jpg"
+  },
+  {
+    "pack_code": "rop",
+    "pack_name": "Relics of the Past",
+    "type_code": "asset",
+    "type_name": "Asset",
+    "faction_code": "neutral",
+    "faction_name": "Neutral",
+    "position": 63,
+    "exceptional": false,
+    "myriad": false,
+    "code": "90063",
+    "name": "Trusty Bullwhip",
+    "real_name": "Trusty Bullwhip",
+    "cost": 1,
+    "text": "Fast. Monterey Jack deck only. Advanced.\n[action]: <b>Fight.</b> This attack uses [agility] instead of [combat]. You get +2 skill value for this attack. If this attack succeeds, you may exhaust Trusty Bullwhip to deal +1 damage for this attack and automatically evade the attacked enemy.",
+    "real_text": "Fast. Monterey Jack deck only. Advanced.\n[action]: <b>Fight.</b> This attack uses [agility] instead of [combat]. You get +2 skill value for this attack. If this attack succeeds, you may exhaust Trusty Bullwhip to deal +1 damage for this attack and automatically evade the attacked enemy.",
+    "quantity": 1,
+    "skill_intellect": 1,
+    "skill_agility": 2,
+    "skill_wild": 1,
+    "health_per_investigator": false,
+    "deck_limit": 1,
+    "slot": "Hand",
+    "real_slot": "Hand",
+    "traits": "Item. Weapon. Melee.",
+    "real_traits": "Item. Weapon. Melee.",
+    "restrictions": {
+      "investigator": {
+        "08007": "08007"
+      }
+    },
+    "illustrator": "Duallbrush",
+    "is_unique": false,
+    "permanent": false,
+    "double_sided": false,
+    "octgn_id": "13f1e54e-d964-4f36-948c-5cfc5cae4827",
+    "url": "https://arkhamdb.com/card/90063",
+    "imagesrc": "/bundles/cards/90063.jpg"
+  },
+  {
+    "pack_code": "rop",
+    "pack_name": "Relics of the Past",
+    "type_code": "treachery",
+    "type_name": "Treachery",
+    "subtype_code": "weakness",
+    "subtype_name": "Weakness",
+    "faction_code": "neutral",
+    "faction_name": "Neutral",
+    "position": 64,
+    "exceptional": false,
+    "myriad": false,
+    "code": "90064",
+    "name": "Buried Secrets",
+    "real_name": "Buried Secrets",
+    "text": "Advanced.\n<b>Revelation</b> - Put Buried Secrets into play in your threat area.\nIf your location can be investigated, you cannot move except by scenario card effects.\n[action] [action]: <b>Investigate.</b> If you succeed, instead of discovering clues, discard Buried Secrets.",
+    "real_text": "Advanced.\n<b>Revelation</b> - Put Buried Secrets into play in your threat area.\nIf your location can be investigated, you cannot move except by scenario card effects.\n[action] [action]: <b>Investigate.</b> If you succeed, instead of discovering clues, discard Buried Secrets.",
+    "quantity": 1,
+    "health_per_investigator": false,
+    "deck_limit": 1,
+    "traits": "Mystery.",
+    "real_traits": "Mystery.",
+    "restrictions": {
+      "investigator": {
+        "08007": "08007"
+      }
+    },
+    "illustrator": "Raymond Bonilla",
+    "is_unique": false,
+    "permanent": false,
+    "double_sided": false,
+    "octgn_id": "24e814a9-2dbd-4a7c-8d0c-f36688a0d0db",
+    "url": "https://arkhamdb.com/card/90064",
+    "imagesrc": "/bundles/cards/90064.jpg"
+  }
+]

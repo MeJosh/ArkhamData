@@ -1,0 +1,177 @@
+[
+  {
+    "pack_code": "ptr",
+    "pack_name": "Path of the Righteous",
+    "type_code": "investigator",
+    "type_name": "Investigator",
+    "faction_code": "guardian",
+    "faction_name": "Guardian",
+    "alternate_of_code": "02001",
+    "alternate_of_name": "Zoey Samaras",
+    "position": 59,
+    "exceptional": false,
+    "myriad": false,
+    "code": "90059",
+    "name": "Zoey Samaras",
+    "real_name": "Zoey Samaras",
+    "subname": "The Chef",
+    "text": "[reaction] After you deal 1 or more damage to an enemy: Add 1 [bless] token to the chaos bag. (Limit once per phase.)\n[fast] Before you reveal chaos tokens during an attack, remove 3 [bless] tokens from the chaos bag: This attack deals +1 damage. (Limit once per round.)\n[elder_sign] effect: +1 for each [bless] token in the chaos bag.",
+    "real_text": "[reaction] After you deal 1 or more damage to an enemy: Add 1 [bless] token to the chaos bag. (Limit once per phase.)\n[fast] Before you reveal chaos tokens during an attack, remove 3 [bless] tokens from the chaos bag: This attack deals +1 damage. (Limit once per round.)\n[elder_sign] effect: +1 for each [bless] token in the chaos bag.",
+    "quantity": 1,
+    "skill_willpower": 4,
+    "skill_intellect": 2,
+    "skill_combat": 4,
+    "skill_agility": 2,
+    "health": 8,
+    "health_per_investigator": false,
+    "sanity": 6,
+    "deck_limit": 1,
+    "traits": "Believer. Hunter.",
+    "real_traits": "Believer. Hunter.",
+    "deck_requirements": {
+      "size": 30,
+      "card": {
+        "02006": {
+          "90060": "90060",
+          "02006": "02006"
+        },
+        "02007": {
+          "90061": "90061",
+          "02007": "02007"
+        }
+      },
+      "random": [
+        {
+          "target": "subtype",
+          "value": "basicweakness"
+        }
+      ]
+    },
+    "deck_options": [
+      {
+        "faction": [
+          "guardian"
+        ],
+        "level": {
+          "min": 0,
+          "max": 3
+        }
+      },
+      {
+        "faction": [
+          "neutral"
+        ],
+        "level": {
+          "min": 0,
+          "max": 5
+        }
+      },
+      {
+        "trait": [
+          "blessed",
+          "charm"
+        ],
+        "level": {
+          "min": 0,
+          "max": 4
+        }
+      },
+      {
+        "faction": [
+          "mystic"
+        ],
+        "level": {
+          "min": 0,
+          "max": 0
+        },
+        "limit": 5,
+        "error": "You cannot have more than 5 Mystic cards."
+      }
+    ],
+    "flavor": "\"His work is not yet done.\"",
+    "illustrator": "Magali Villeneuve",
+    "is_unique": true,
+    "permanent": false,
+    "double_sided": true,
+    "back_text": "<b>Deck Size</b>: 30.\n<b>Deckbuilding Options</b>: Guardian cards ([guardian]) level 0-3, [[Blessed]] and [[Charm]] cards level 0-4, Neutral cards level 0-5, up to five other Mystic cards ([mystic]) level 0.\n<b>Deckbuilding Requirements</b> (do not count toward deck size): Zoey's Cross, Smite the Wicked, 1 random basic weakness.",
+    "back_flavor": "Zoey had known that she was special ever since God spoke to her one night when she was six years old... the night that terrible fire took away her parents. He told her that He had chosen her from among all the people of the world to be His agent. She would protect the innocent and punish the wicked. Since then, He comes to her in times of trouble, offering guidance and comfort. Zoey now travels from city to city, taking work as a chef to support herself. When she isn’t working, she stalks the night, guided by the Lord’s voice. Wherever she finds wickedness, she strikes it down without remorse or hesitation.",
+    "octgn_id": "f1e46787-ec37-4e49-b777-8d8b864feb07",
+    "url": "https://arkhamdb.com/card/90059",
+    "imagesrc": "/bundles/cards/90059.jpg",
+    "backimagesrc": "/bundles/cards/90059b.jpg"
+  },
+  {
+    "pack_code": "ptr",
+    "pack_name": "Path of the Righteous",
+    "type_code": "asset",
+    "type_name": "Asset",
+    "faction_code": "neutral",
+    "faction_name": "Neutral",
+    "position": 60,
+    "exceptional": false,
+    "myriad": false,
+    "code": "90060",
+    "name": "Zoey's Cross",
+    "real_name": "Zoey's Cross",
+    "subname": "Symbol of Righteousness",
+    "cost": 1,
+    "text": "Zoey Samaras deck only. Advanced.\n[reaction] After you engage an enemy, exhaust Zoey’s Cross and spend 1 resource: Deal 1 damage to that enemy.\n[fast] Remove 2 [bless] tokens from the chaos bag: Engage an enemy at your location.",
+    "real_text": "Zoey Samaras deck only. Advanced.\n[reaction] After you engage an enemy, exhaust Zoey’s Cross and spend 1 resource: Deal 1 damage to that enemy.\n[fast] Remove 2 [bless] tokens from the chaos bag: Engage an enemy at your location.",
+    "quantity": 1,
+    "skill_combat": 2,
+    "skill_wild": 1,
+    "health_per_investigator": false,
+    "deck_limit": 1,
+    "slot": "Accessory",
+    "real_slot": "Accessory",
+    "traits": "Item. Charm.",
+    "real_traits": "Item. Charm.",
+    "restrictions": {
+      "investigator": {
+        "02001": "02001"
+      }
+    },
+    "illustrator": "Preston Stone",
+    "is_unique": true,
+    "permanent": false,
+    "double_sided": false,
+    "octgn_id": "c089c6d6-f97a-448b-9828-317fafa422be",
+    "url": "https://arkhamdb.com/card/90060",
+    "imagesrc": "/bundles/cards/90060.jpg"
+  },
+  {
+    "pack_code": "ptr",
+    "pack_name": "Path of the Righteous",
+    "type_code": "treachery",
+    "type_name": "Treachery",
+    "subtype_code": "weakness",
+    "subtype_name": "Weakness",
+    "faction_code": "neutral",
+    "faction_name": "Neutral",
+    "position": 61,
+    "exceptional": false,
+    "myriad": false,
+    "code": "90061",
+    "name": "Smite the Wicked",
+    "real_name": "Smite the Wicked",
+    "text": "Advanced. Attached enemy gets +2 fight and +2 health.\n<b>Revelation</b> - Discard cards from the top of the encounter deck until an enemy is discarded. Attach Smite the Wicked to that enemy and spawn it at the location farthest from you.\n<b>Forced</b> - When the game ends, if attached enemy is in play: Zoey Samaras suffers 1 mental trauma.",
+    "real_text": "Advanced. Attached enemy gets +2 fight and +2 health.\n<b>Revelation</b> - Discard cards from the top of the encounter deck until an enemy is discarded. Attach Smite the Wicked to that enemy and spawn it at the location farthest from you.\n<b>Forced</b> - When the game ends, if attached enemy is in play: Zoey Samaras suffers 1 mental trauma.",
+    "quantity": 1,
+    "health_per_investigator": false,
+    "deck_limit": 1,
+    "traits": "Task.",
+    "real_traits": "Task.",
+    "restrictions": {
+      "investigator": {
+        "02001": "02001"
+      }
+    },
+    "illustrator": "Preston Stone",
+    "is_unique": false,
+    "permanent": false,
+    "double_sided": false,
+    "octgn_id": "ab41eeb8-1dd3-496f-92db-846a114eb9e9",
+    "url": "https://arkhamdb.com/card/90061",
+    "imagesrc": "/bundles/cards/90061.jpg"
+  }
+]

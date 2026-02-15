@@ -1,0 +1,168 @@
+[
+  {
+    "pack_code": "bob",
+    "pack_name": "Blood of Baalshandor",
+    "type_code": "investigator",
+    "type_name": "Investigator",
+    "faction_code": "mystic",
+    "faction_name": "Mystic",
+    "position": 16,
+    "exceptional": false,
+    "myriad": false,
+    "code": "98016",
+    "name": "Dexter Drake",
+    "real_name": "Dexter Drake",
+    "subname": "The Magician",
+    "text": "[free] During your turn, discard an asset you control: Play an asset with a different title from your hand, reducing its cost by 1. (Limit once per round.)\n[elder_sign] effect: +2. You may return an asset from your play area to your hand. Then, draw 1 card.",
+    "real_text": "[free] During your turn, discard an asset you control: Play an asset with a different title from your hand, reducing its cost by 1. (Limit once per round.)\n[elder_sign] effect: +2. You may return an asset from your play area to your hand. Then, draw 1 card.",
+    "quantity": 1,
+    "skill_willpower": 5,
+    "skill_intellect": 2,
+    "skill_combat": 3,
+    "skill_agility": 2,
+    "health": 6,
+    "health_per_investigator": false,
+    "sanity": 8,
+    "deck_limit": 1,
+    "real_slot": "",
+    "traits": "Sorcerer. Veteran.",
+    "real_traits": "Sorcerer. Veteran.",
+    "deck_requirements": {
+      "size": 30,
+      "card": {
+        "07012": {
+          "98017": "98017",
+          "07012": "07012"
+        },
+        "07013": {
+          "98018": "98018",
+          "07013": "07013"
+        }
+      },
+      "random": [
+        {
+          "target": "subtype",
+          "value": "basicweakness"
+        }
+      ]
+    },
+    "deck_options": [
+      {
+        "faction": [
+          "mystic",
+          "neutral"
+        ],
+        "level": {
+          "min": 0,
+          "max": 5
+        }
+      },
+      {
+        "faction": [
+          "rogue"
+        ],
+        "level": {
+          "min": 0,
+          "max": 2
+        }
+      }
+    ],
+    "flavor": "\"Do you want to see true magic?\"",
+    "illustrator": "Shane Pierce",
+    "is_unique": true,
+    "hidden": true,
+    "permanent": false,
+    "double_sided": true,
+    "back_text": "<b>Deck Size</b>: 30.\n<b>Deckbuilding Options</b>: Mystic cards ([mystic]) level 0-5, Rogue cards ([rogue]) level 0-2, Neutral cards level 0-5.\n<b>Deckbuilding Requirements</b> (do not count toward deck size): Showmanship, Occult Scraps, 1 random basic weakness.",
+    "back_flavor": "For Dexter Drake, the magic of fairy tales and myth has been a lifelong fascination. The chance discovery of an old book page during the Great War opened Drake's eyes to the possibility that magic might truly exist. Years later, the promise of arcane tomes locked away in Miskatonic University's special collection draws the successful stage magician to the quiet town of Arkham. Lured to an auction of occult items, \"Drake the Great\" and his assistant, Molly Maxwell, find themselves targeted by the depraved servants of an otherwordly force of disease and corruption. To save Molly, Arkham, and perhaps the world from a horrific transformation, Drake needs more than his wits and quick hands. He must turn to real magic, even if it risks his mind, body, and spirit.",
+    "octgn_id": "d47f1653-8eff-4bc1-aea6-90d7eb7fbaa9:026cb382-cca7-4043-9c14-07c9592700ec",
+    "url": "https://arkhamdb.com/card/98016",
+    "imagesrc": "/bundles/cards/98016.png",
+    "backimagesrc": "/bundles/cards/98016b.jpg"
+  },
+  {
+    "pack_code": "bob",
+    "pack_name": "Blood of Baalshandor",
+    "type_code": "asset",
+    "type_name": "Asset",
+    "faction_code": "neutral",
+    "faction_name": "Neutral",
+    "position": 17,
+    "exceptional": false,
+    "myriad": false,
+    "code": "98017",
+    "name": "Molly Maxwell",
+    "real_name": "Molly Maxwell",
+    "subname": "The Exotic Morgana",
+    "cost": 3,
+    "text": "Dexter Drake deck only. Replacement.\n[free] Exhaust Molly Maxwell and deal her 1 horror: Name any trait. One at a time, reveal cards from the top of your deck until an asset with the named trait is revealed. Draw that asset. Shuffle each other revealed card back into your deck.",
+    "real_text": "Dexter Drake deck only. Replacement.\n[free] Exhaust Molly Maxwell and deal her 1 horror: Name any trait. One at a time, reveal cards from the top of your deck until an asset with the named trait is revealed. Draw that asset. Shuffle each other revealed card back into your deck.",
+    "quantity": 1,
+    "skill_willpower": 1,
+    "skill_agility": 1,
+    "skill_wild": 1,
+    "health": 2,
+    "health_per_investigator": false,
+    "sanity": 4,
+    "deck_limit": 1,
+    "slot": "Ally",
+    "real_slot": "Ally",
+    "traits": "Ally. Assistant.",
+    "real_traits": "Ally. Assistant.",
+    "restrictions": {
+      "investigator": {
+        "98016": "98016",
+        "07004": "07004"
+      }
+    },
+    "illustrator": "Drazenka Kimpel",
+    "is_unique": true,
+    "permanent": false,
+    "double_sided": false,
+    "octgn_id": "c71da431-85ee-4a76-b041-ae1b73b0de56",
+    "url": "https://arkhamdb.com/card/98017",
+    "imagesrc": "/bundles/cards/98017.png"
+  },
+  {
+    "pack_code": "bob",
+    "pack_name": "Blood of Baalshandor",
+    "type_code": "treachery",
+    "type_name": "Treachery",
+    "subtype_code": "weakness",
+    "subtype_name": "Weakness",
+    "faction_code": "neutral",
+    "faction_name": "Neutral",
+    "position": 18,
+    "exceptional": false,
+    "myriad": false,
+    "code": "98018",
+    "name": "Yaztaroth",
+    "real_name": "Yaztaroth",
+    "text": "Dexter Drake deck only. Replacement.\n<b>Revelation</b> - Put Yaztaroth into play in your threat area.\nYou cannot play assets or put assets into play.\n[action] [action]: Discard Yaztaroth.",
+    "real_text": "Dexter Drake deck only. Replacement.\n<b>Revelation</b> - Put Yaztaroth into play in your threat area.\nYou cannot play assets or put assets into play.\n[action] [action]: Discard Yaztaroth.",
+    "errata_date": {
+      "date": "2021-06-28 00:00:00.000000",
+      "timezone_type": 3,
+      "timezone": "UTC"
+    },
+    "quantity": 1,
+    "health_per_investigator": false,
+    "deck_limit": 1,
+    "real_slot": "",
+    "traits": "Curse. Pact.",
+    "real_traits": "Curse. Pact.",
+    "restrictions": {
+      "investigator": {
+        "98016": "98016",
+        "07004": "07004"
+      }
+    },
+    "illustrator": "Adam S. Doyle",
+    "is_unique": true,
+    "permanent": false,
+    "double_sided": false,
+    "octgn_id": "04883b22-3c62-4b06-845f-d592237c9ead",
+    "url": "https://arkhamdb.com/card/98018",
+    "imagesrc": "/bundles/cards/98018.png"
+  }
+]

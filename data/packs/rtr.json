@@ -1,0 +1,223 @@
+[
+  {
+    "pack_code": "rtr",
+    "pack_name": "Red Tide Rising",
+    "type_code": "investigator",
+    "type_name": "Investigator",
+    "faction_code": "survivor",
+    "faction_name": "Survivor",
+    "alternate_of_code": "01005",
+    "alternate_of_name": "Wendy Adams",
+    "position": 37,
+    "exceptional": false,
+    "myriad": false,
+    "code": "90037",
+    "name": "Wendy Adams",
+    "real_name": "Wendy Adams",
+    "subname": "The Urchin",
+    "text": "Add Tidal Memento to your deck.\n[reaction] After you successfully evade a non-[[Elite]] enemy: Seal either 1 [bless] or [curse] token from the chaos bag, or any [bless] or [curse] tokens revealed from the chaos bag during this test, on that enemy.\n[elder_sign] effect: +2. Search the chaos bag for up to 2 [bless] and/or [curse] tokens and reveal them, ignoring their effects.",
+    "real_text": "Add Tidal Memento to your deck.\n[reaction] After you successfully evade a non-[[Elite]] enemy: Seal either 1 [bless] or [curse] token from the chaos bag, or any [bless] or [curse] tokens revealed from the chaos bag during this test, on that enemy.\n[elder_sign] effect: +2. Search the chaos bag for up to 2 [bless] and/or [curse] tokens and reveal them, ignoring their effects.",
+    "quantity": 1,
+    "skill_willpower": 4,
+    "skill_intellect": 3,
+    "skill_combat": 1,
+    "skill_agility": 4,
+    "health": 7,
+    "health_per_investigator": false,
+    "sanity": 7,
+    "deck_limit": 1,
+    "traits": "Drifter. Blessed. Cursed.",
+    "real_traits": "Drifter. Blessed. Cursed.",
+    "tags": "se.",
+    "deck_requirements": {
+      "size": 30,
+      "card": {
+        "01014": {
+          "90039": "90039",
+          "01014": "01014"
+        },
+        "01015": {
+          "90040": "90040",
+          "01015": "01015"
+        }
+      },
+      "random": [
+        {
+          "target": "subtype",
+          "value": "basicweakness"
+        }
+      ]
+    },
+    "deck_options": [
+      {
+        "faction": [
+          "survivor",
+          "neutral"
+        ],
+        "level": {
+          "min": 0,
+          "max": 5
+        }
+      },
+      {
+        "name": "Trait Choice",
+        "option_select": [
+          {
+            "id": "blessed",
+            "name": "Blessed",
+            "trait": [
+              "blessed"
+            ],
+            "level": {
+              "min": 0,
+              "max": 5
+            }
+          },
+          {
+            "id": "cursed",
+            "name": "Cursed",
+            "trait": [
+              "cursed"
+            ],
+            "level": {
+              "min": 0,
+              "max": 5
+            }
+          },
+          {
+            "id": "both",
+            "name": "Blessed and Cursed",
+            "trait": [
+              "blessed",
+              "cursed"
+            ],
+            "level": {
+              "min": 0,
+              "max": 5
+            },
+            "size": 5
+          }
+        ]
+      }
+    ],
+    "flavor": "\"The little things are important. Grown-ups don't see that.\"",
+    "illustrator": "Jacob Murray",
+    "is_unique": true,
+    "permanent": false,
+    "double_sided": true,
+    "back_text": "<b>Deck Size</b>: 30.\n<b>[[Trait]] Choice</b>: At deck creation, choose [[Blessed]] or [[Cursed]], or choose both and gain +5 Deck Size.\n<b>Deckbuilding Options</b>: Survivor cards ([survivor]) level 0-5, Neutral cards level 0-5, cards of your chosen trait(s) 0-5.\n<b>Deckbuilding Requirements</b> (do not count toward deck size): Wendy's Amulet, Abandoned and Alone, 1 random basic weakness.",
+    "back_flavor": "Mama used to let Wendy play with her necklace when she was small. Mama would tell her stories, and Wendy would spin the necklace and watch as it glittered. Then, word came that her father had been lost at sea, and Mama started acting strange, drawing unusual symbols in chalk all over the house. They took Mama to the asylum, and Wendy went to the orphanage. Before they took her away, Mama gave her the necklace, to \"protect her.\" Wendy stayed in the orphanage for several years before running away, deciding that she could take better care of herself on her own.",
+    "octgn_id": "99622e09-54ac-4bdb-9c36-781c93867415",
+    "url": "https://arkhamdb.com/card/90037",
+    "imagesrc": "/bundles/cards/90037.png",
+    "backimagesrc": "/bundles/cards/90037b.png"
+  },
+  {
+    "pack_code": "rtr",
+    "pack_name": "Red Tide Rising",
+    "type_code": "asset",
+    "type_name": "Asset",
+    "faction_code": "neutral",
+    "faction_name": "Neutral",
+    "position": 38,
+    "exceptional": false,
+    "myriad": false,
+    "code": "90038",
+    "name": "Tidal Memento",
+    "real_name": "Tidal Memento",
+    "text": "Wendy Adams deck only. Permanent.\n[reaction] When an enemy would ready or doom would be placed on it, release a [bless] or [curse] token sealed on that enemy: Cancel that effect.\n[reaction] During a skill test you are performing, when a chaos token would be revealed from the chaos bag: Resolve a [bless] or [curse] token sealed on an enemy instead.",
+    "real_text": "Wendy Adams deck only. Permanent.\n[reaction] When an enemy would ready or doom would be placed on it, release a [bless] or [curse] token sealed on that enemy: Cancel that effect.\n[reaction] During a skill test you are performing, when a chaos token would be revealed from the chaos bag: Resolve a [bless] or [curse] token sealed on an enemy instead.",
+    "quantity": 1,
+    "health_per_investigator": false,
+    "deck_limit": 1,
+    "traits": "Item. Charm.",
+    "real_traits": "Item. Charm.",
+    "tags": "se.",
+    "restrictions": {
+      "investigator": {
+        "01005": "01005"
+      }
+    },
+    "illustrator": "Richard Jossy",
+    "is_unique": true,
+    "permanent": true,
+    "double_sided": false,
+    "octgn_id": "f72e8669-cc74-4130-a1d3-30526a886a02",
+    "url": "https://arkhamdb.com/card/90038",
+    "imagesrc": "/bundles/cards/90038.png"
+  },
+  {
+    "pack_code": "rtr",
+    "pack_name": "Red Tide Rising",
+    "type_code": "asset",
+    "type_name": "Asset",
+    "faction_code": "neutral",
+    "faction_name": "Neutral",
+    "position": 39,
+    "exceptional": false,
+    "myriad": false,
+    "code": "90039",
+    "name": "Wendy's Amulet",
+    "real_name": "Wendy's Amulet",
+    "cost": 2,
+    "text": "Wendy Adams deck only. Advanced.\nYou may play any event in your discard pile as if it were in your hand.\n<b>Forced</b> - After you play an event or discard an event from play: Place it on the bottom of your deck instead of in your discard pile.",
+    "real_text": "Wendy Adams deck only. Advanced.\nYou may play any event in your discard pile as if it were in your hand.\n<b>Forced</b> - After you play an event or discard an event from play: Place it on the bottom of your deck instead of in your discard pile.",
+    "quantity": 1,
+    "skill_willpower": 1,
+    "skill_wild": 2,
+    "health_per_investigator": false,
+    "deck_limit": 1,
+    "slot": "Accessory",
+    "real_slot": "Accessory",
+    "traits": "Item. Relic.",
+    "real_traits": "Item. Relic.",
+    "restrictions": {
+      "investigator": {
+        "01005": "01005"
+      }
+    },
+    "illustrator": "Linda Tso",
+    "is_unique": true,
+    "permanent": false,
+    "double_sided": false,
+    "octgn_id": "5db6bb4f-f7f9-43f3-b365-4952ebb9727c",
+    "url": "https://arkhamdb.com/card/90039",
+    "imagesrc": "/bundles/cards/90039.png"
+  },
+  {
+    "pack_code": "rtr",
+    "pack_name": "Red Tide Rising",
+    "type_code": "treachery",
+    "type_name": "Treachery",
+    "subtype_code": "weakness",
+    "subtype_name": "Weakness",
+    "faction_code": "neutral",
+    "faction_name": "Neutral",
+    "position": 40,
+    "exceptional": false,
+    "myriad": false,
+    "code": "90040",
+    "name": "Abandoned and Alone",
+    "real_name": "Abandoned and Alone",
+    "text": "Advanced.\n<b>Revelation</b> - Remove all non-weakness cards in your discard pile from the game. If no cards were removed by this effect, shuffle this card back into your deck. Otherwise, take 3 direct horror.",
+    "real_text": "Advanced.\n<b>Revelation</b> - Remove all non-weakness cards in your discard pile from the game. If no cards were removed by this effect, shuffle this card back into your deck. Otherwise, take 3 direct horror.",
+    "quantity": 1,
+    "health_per_investigator": false,
+    "deck_limit": 1,
+    "traits": "Madness.",
+    "real_traits": "Madness.",
+    "restrictions": {
+      "investigator": {
+        "01005": "01005"
+      }
+    },
+    "flavor": "I don't need them. I don't need anyone.",
+    "illustrator": "Ben Zweifel",
+    "is_unique": false,
+    "permanent": false,
+    "double_sided": false,
+    "octgn_id": "c3619019-1c3b-47da-892e-f2b36034427e",
+    "url": "https://arkhamdb.com/card/90040",
+    "imagesrc": "/bundles/cards/90040.png"
+  }
+]

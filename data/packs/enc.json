@@ -1,0 +1,339 @@
+[
+  {
+    "pack_code": "enc",
+    "pack_name": "Enthralling Encore",
+    "type_code": "investigator",
+    "type_name": "Investigator",
+    "faction_code": "neutral",
+    "faction_name": "Neutral",
+    "alternate_of_code": "03006",
+    "alternate_of_name": "Lola Hayes",
+    "position": 87,
+    "exceptional": false,
+    "myriad": false,
+    "code": "90087",
+    "name": "Lola Hayes",
+    "real_name": "Lola Hayes",
+    "subname": "The Actress",
+    "text": "You begin the game in the Neutral role.\nYou can only play or commit Neutral cards or cards of your current role.\n<b>Forced</b> - When your turn begins: Switch your role ([guardian], [seeker], [rogue], [mystic], [survivor], or Neutral).\n[elder_sign] effect: +2. You may switch roles.",
+    "real_text": "You begin the game in the Neutral role.\nYou can only play or commit Neutral cards or cards of your current role.\n<b>Forced</b> - When your turn begins: Switch your role ([guardian], [seeker], [rogue], [mystic], [survivor], or Neutral).\n[elder_sign] effect: +2. You may switch roles.",
+    "quantity": 1,
+    "skill_willpower": 3,
+    "skill_intellect": 3,
+    "skill_combat": 3,
+    "skill_agility": 3,
+    "health": 6,
+    "health_per_investigator": false,
+    "sanity": 6,
+    "deck_limit": 1,
+    "traits": "Performer.",
+    "real_traits": "Performer.",
+    "deck_requirements": {
+      "size": 40,
+      "card": {
+        "03018": {
+          "90092": "90092",
+          "03018": "03018"
+        },
+        "03019": {
+          "90093": "90093",
+          "03019": "03019"
+        }
+      },
+      "random": [
+        {
+          "target": "subtype",
+          "value": "basicweakness"
+        }
+      ]
+    },
+    "deck_options": [
+      {
+        "faction": [
+          "neutral"
+        ],
+        "level": {
+          "min": 0,
+          "max": 5
+        }
+      },
+      {
+        "faction": [
+          "survivor",
+          "guardian",
+          "seeker",
+          "rogue",
+          "mystic"
+        ],
+        "ignore_match": true,
+        "atleast": {
+          "factions": 5,
+          "min": 6
+        },
+        "error": "You must have at least 6 cards from each faction."
+      },
+      {
+        "name": "Class Choice",
+        "id": "faction_1",
+        "faction_select": [
+          "guardian",
+          "seeker",
+          "rogue",
+          "mystic",
+          "survivor"
+        ],
+        "level": {
+          "min": 0,
+          "max": 4
+        }
+      },
+      {
+        "name": "Class Choice",
+        "id": "faction_2",
+        "faction_select": [
+          "guardian",
+          "seeker",
+          "rogue",
+          "mystic",
+          "survivor"
+        ],
+        "level": {
+          "min": 0,
+          "max": 4
+        }
+      },
+      {
+        "faction": [
+          "survivor",
+          "guardian",
+          "seeker",
+          "rogue",
+          "mystic"
+        ],
+        "level": {
+          "min": 0,
+          "max": 1
+        }
+      }
+    ],
+    "illustrator": "Magali Villeneuve",
+    "is_unique": true,
+    "permanent": false,
+    "double_sided": true,
+    "back_text": "<b>Deck size</b>: 40.\n<b>Class Choices</b>: At deck creation, choose 2 classes ([guardian], [seeker], [rogue], [mystic], or [survivor]).\n<b>Deckbuilding Options</b>: Neutral cards level 0-5, cards from your chosen classes level 0-4, cards from other classes level 0-1.\n<b>Deckbuilding Requirements</b> (do not count toward deck size): 2 copies of Improvisation, 2 copies of Crisis of Identity, 1 random basic weakness.\n<b>Additional Requirements</b>: Your deck must include at least 6 cards from each class ([guardian], [seeker], [rogue], [mystic], and [survivor]).",
+    "back_flavor": "Lola had assumed that her days of performing <i>The King in Yellow</i> were behind her. Recently, however, she has heard a lone violin play the haunting melody from the show's last production. The music creeps into her mind in moments of silence and solitude, and she's compelled to visit the Ward Theatre one last time.",
+    "url": "https://arkhamdb.com/card/90087"
+  },
+  {
+    "pack_code": "enc",
+    "pack_name": "Enthralling Encore",
+    "type_code": "event",
+    "type_name": "Event",
+    "faction_code": "neutral",
+    "faction_name": "Neutral",
+    "position": 88,
+    "exceptional": false,
+    "myriad": false,
+    "code": "90088",
+    "name": "Leading Lady (Heroine)",
+    "real_name": "Leading Lady (Heroine)",
+    "cost": 1,
+    "text": "Lola Hayes deck only. Replacement.\nFast. Play only during your turn.\nPlay a card from your hand, regardless of your current role <i>(paying its cost)</i>. If that card was a Guardian ([guardian]) card, you may either draw 1 card or immediately take a fight action.",
+    "real_text": "Lola Hayes deck only. Replacement.\nFast. Play only during your turn.\nPlay a card from your hand, regardless of your current role <i>(paying its cost)</i>. If that card was a Guardian ([guardian]) card, you may either draw 1 card or immediately take a fight action.",
+    "quantity": 1,
+    "skill_combat": 1,
+    "skill_wild": 1,
+    "health_per_investigator": false,
+    "deck_limit": 1,
+    "traits": "Tactic. Improvised.",
+    "real_traits": "Tactic. Improvised.",
+    "restrictions": {
+      "investigator": {
+        "03006": "03006"
+      }
+    },
+    "flavor": "\"I'm done waiting in the wings.\"",
+    "illustrator": "Borja Pindado",
+    "is_unique": false,
+    "permanent": false,
+    "double_sided": false,
+    "url": "https://arkhamdb.com/card/90088"
+  },
+  {
+    "pack_code": "enc",
+    "pack_name": "Enthralling Encore",
+    "type_code": "event",
+    "type_name": "Event",
+    "faction_code": "neutral",
+    "faction_name": "Neutral",
+    "position": 89,
+    "exceptional": false,
+    "myriad": false,
+    "code": "90089",
+    "name": "Leading Lady (Mentor)",
+    "real_name": "Leading Lady (Mentor)",
+    "cost": 1,
+    "text": "Lola Hayes deck only. Replacement.\nFast. Play only during your turn.\nPlay a card from your hand, regardless of your current role <i>(paying its cost)</i>. If that card was a Seeker ([seeker]) card, you may either draw 1 card or immediately take an investigate action.",
+    "real_text": "Lola Hayes deck only. Replacement.\nFast. Play only during your turn.\nPlay a card from your hand, regardless of your current role <i>(paying its cost)</i>. If that card was a Seeker ([seeker]) card, you may either draw 1 card or immediately take an investigate action.",
+    "quantity": 1,
+    "skill_intellect": 1,
+    "skill_wild": 1,
+    "health_per_investigator": false,
+    "deck_limit": 1,
+    "traits": "Insight. Improvised.",
+    "real_traits": "Insight. Improvised.",
+    "restrictions": {
+      "investigator": {
+        "03006": "03006"
+      }
+    },
+    "flavor": "\"I've learned a thing or two on stage.\"",
+    "illustrator": "Borja Pindado",
+    "is_unique": false,
+    "permanent": false,
+    "double_sided": false,
+    "url": "https://arkhamdb.com/card/90089"
+  },
+  {
+    "pack_code": "enc",
+    "pack_name": "Enthralling Encore",
+    "type_code": "event",
+    "type_name": "Event",
+    "faction_code": "neutral",
+    "faction_name": "Neutral",
+    "position": 90,
+    "exceptional": false,
+    "myriad": false,
+    "code": "90090",
+    "name": "Leading Lady (Femme Fatale)",
+    "real_name": "Leading Lady (Femme Fatale)",
+    "cost": 1,
+    "text": "Lola Hayes deck only. Replacement.\nFast. Play only during your turn.\nPlay a card from your hand, regardless of your current role <i>(paying its cost)</i>. If that card was a Rogue ([rogue]) card, you may either draw 1 card or immediately take an evade action.",
+    "real_text": "Lola Hayes deck only. Replacement.\nFast. Play only during your turn.\nPlay a card from your hand, regardless of your current role <i>(paying its cost)</i>. If that card was a Rogue ([rogue]) card, you may either draw 1 card or immediately take an evade action.",
+    "quantity": 1,
+    "skill_agility": 1,
+    "skill_wild": 1,
+    "health_per_investigator": false,
+    "deck_limit": 1,
+    "traits": "Trick. Improvised.",
+    "real_traits": "Trick. Improvised.",
+    "restrictions": {
+      "investigator": {
+        "03006": "03006"
+      }
+    },
+    "flavor": "\"Trust me, honey, I'm lead material.\"",
+    "illustrator": "Borja Pindado",
+    "is_unique": false,
+    "permanent": false,
+    "double_sided": false,
+    "url": "https://arkhamdb.com/card/90090"
+  },
+  {
+    "pack_code": "enc",
+    "pack_name": "Enthralling Encore",
+    "type_code": "event",
+    "type_name": "Event",
+    "faction_code": "neutral",
+    "faction_name": "Neutral",
+    "position": 91,
+    "exceptional": false,
+    "myriad": false,
+    "code": "90091",
+    "name": "Leading Lady (Enchantress)",
+    "real_name": "Leading Lady (Enchantress)",
+    "cost": 1,
+    "text": "Lola Hayes deck only. Replacement.\nFast. Play only during your turn.\nPlay a card from your hand, regardless of your current role <i>(paying its cost)</i>. If that card was a Mystic ([mystic]) card, you may either draw 1 card or remove 1 doom from a player card at your location.",
+    "real_text": "Lola Hayes deck only. Replacement.\nFast. Play only during your turn.\nPlay a card from your hand, regardless of your current role <i>(paying its cost)</i>. If that card was a Mystic ([mystic]) card, you may either draw 1 card or remove 1 doom from a player card at your location.",
+    "quantity": 1,
+    "skill_willpower": 1,
+    "skill_wild": 1,
+    "health_per_investigator": false,
+    "deck_limit": 1,
+    "traits": "Ritual. Improvised.",
+    "real_traits": "Ritual. Improvised.",
+    "restrictions": {
+      "investigator": {
+        "03006": "03006"
+      }
+    },
+    "flavor": "\"The trick is to only show them what you want them to see.\"",
+    "illustrator": "Borja Pindado",
+    "is_unique": false,
+    "permanent": false,
+    "double_sided": false,
+    "url": "https://arkhamdb.com/card/90091"
+  },
+  {
+    "pack_code": "enc",
+    "pack_name": "Enthralling Encore",
+    "type_code": "event",
+    "type_name": "Event",
+    "faction_code": "neutral",
+    "faction_name": "Neutral",
+    "position": 92,
+    "exceptional": false,
+    "myriad": false,
+    "code": "90092",
+    "name": "Leading Lady (Final Girl)",
+    "real_name": "Leading Lady (Final Girl)",
+    "cost": 1,
+    "text": "Lola Hayes deck only. Replacement.\nFast. Play only during your turn.\nPlay a card from your hand, regardless of your current role <i>(paying its cost)</i>. If that card was a Survivor ([survivor]) card, you may either draw 1 card or heal 1 damage/horror.",
+    "real_text": "Lola Hayes deck only. Replacement.\nFast. Play only during your turn.\nPlay a card from your hand, regardless of your current role <i>(paying its cost)</i>. If that card was a Survivor ([survivor]) card, you may either draw 1 card or heal 1 damage/horror.",
+    "quantity": 1,
+    "skill_wild": 2,
+    "health_per_investigator": false,
+    "deck_limit": 1,
+    "traits": "Spirit. Improvised.",
+    "real_traits": "Spirit. Improvised.",
+    "restrictions": {
+      "investigator": {
+        "03006": "03006"
+      }
+    },
+    "flavor": "\"Come on, Lola, just make it to the final bow.\"",
+    "illustrator": "Borja Pindado",
+    "is_unique": false,
+    "permanent": false,
+    "double_sided": false,
+    "url": "https://arkhamdb.com/card/90092"
+  },
+  {
+    "pack_code": "enc",
+    "pack_name": "Enthralling Encore",
+    "type_code": "asset",
+    "type_name": "Asset",
+    "subtype_code": "weakness",
+    "subtype_name": "Weakness",
+    "faction_code": "neutral",
+    "faction_name": "Neutral",
+    "position": 93,
+    "exceptional": false,
+    "myriad": false,
+    "code": "90093",
+    "name": "Samuel Blake",
+    "real_name": "Samuel Blake",
+    "subname": "Obsessive Producer",
+    "cost": 3,
+    "text": "Lola Hayes deck only. Replacement. Peril. Hidden.\nWhile Samuel Blake is in your hand, you cannot switch roles or play cards belonging to another role.\nWhile Samuel Blake is in play, as an additional cost for you to switch your role, you must take 1 horror.",
+    "real_text": "Lola Hayes deck only. Replacement. Peril. Hidden.\nWhile Samuel Blake is in your hand, you cannot switch roles or play cards belonging to another role.\nWhile Samuel Blake is in play, as an additional cost for you to switch your role, you must take 1 horror.",
+    "quantity": 1,
+    "health": 3,
+    "health_per_investigator": false,
+    "deck_limit": 1,
+    "slot": "Ally",
+    "real_slot": "Ally",
+    "traits": "Humanoid. Cultist.",
+    "real_traits": "Humanoid. Cultist.",
+    "restrictions": {
+      "investigator": {
+        "03006": "03006"
+      }
+    },
+    "illustrator": "Walter Velez",
+    "is_unique": true,
+    "permanent": false,
+    "double_sided": false,
+    "url": "https://arkhamdb.com/card/90093"
+  }
+]

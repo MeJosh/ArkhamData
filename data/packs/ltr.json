@@ -1,0 +1,349 @@
+[
+  {
+    "pack_code": "ltr",
+    "pack_name": "Laid to Rest",
+    "type_code": "investigator",
+    "type_name": "Investigator",
+    "faction_code": "mystic",
+    "faction_name": "Mystic",
+    "alternate_of_code": "02004",
+    "alternate_of_name": "Jim Culver",
+    "position": 49,
+    "exceptional": false,
+    "myriad": false,
+    "code": "90049",
+    "name": "Jim Culver",
+    "real_name": "Jim Culver",
+    "subname": "The Musician",
+    "text": "[reaction] After you reveal 1 or more [skull] or [curse] tokens during a skill test you are performing: Replenish 1 charge on an asset you control. (Limit once per round.)\n[elder_sign] effect: +2. You may treat this token as if it were a [skull] or [curse] token instead.",
+    "real_text": "[reaction] After you reveal 1 or more [skull] or [curse] tokens during a skill test you are performing: Replenish 1 charge on an asset you control. (Limit once per round.)\n[elder_sign] effect: +2. You may treat this token as if it were a [skull] or [curse] token instead.",
+    "quantity": 1,
+    "skill_willpower": 4,
+    "skill_intellect": 3,
+    "skill_combat": 3,
+    "skill_agility": 2,
+    "health": 7,
+    "health_per_investigator": false,
+    "sanity": 8,
+    "deck_limit": 1,
+    "traits": "Performer. Cursed.",
+    "real_traits": "Performer. Cursed.",
+    "deck_requirements": {
+      "size": 30,
+      "card": {
+        "90052": {
+          "90052": "90052"
+        },
+        "02012": {
+          "90050": "90050",
+          "02012": "02012"
+        },
+        "02013": {
+          "90051": "90051",
+          "02013": "02013"
+        }
+      },
+      "random": [
+        {
+          "target": "subtype",
+          "value": "basicweakness"
+        }
+      ]
+    },
+    "deck_options": [
+      {
+        "faction": [
+          "mystic"
+        ],
+        "level": {
+          "min": 0,
+          "max": 3
+        }
+      },
+      {
+        "faction": [
+          "neutral"
+        ],
+        "level": {
+          "min": 0,
+          "max": 5
+        }
+      },
+      {
+        "trait": [
+          "spell",
+          "cursed"
+        ],
+        "level": {
+          "min": 0,
+          "max": 4
+        }
+      },
+      {
+        "faction": [
+          "survivor"
+        ],
+        "level": {
+          "min": 0,
+          "max": 0
+        },
+        "limit": 5,
+        "error": "You cannot have more than 5 Survivor cards."
+      }
+    ],
+    "flavor": "“I know I can make the dead dance.”",
+    "illustrator": "Magali Villeneuve",
+    "is_unique": true,
+    "permanent": false,
+    "double_sided": true,
+    "back_text": "<b>Deck Size</b>: 30.\n<b>Deckbuilding Options</b>: Mystic cards ([mystic]) level 0-3, [[Spell]] and [[Cursed]] cards level 0-4, Neutral cards level 0-5, up to five other Survivor cards ([survivor]) level 0.\n<b>Deckbuilding Requirements</b> (do not count toward deck size): Jim's Trumpet, Final Rhapsody, The Beyond, 1 random basic weakness.\n<b>Spirit Deck Size</b>: 10.\n<b>Spirit Deckbuilding Options</b>: 9 different [[Ally]] assets from any class level 0–2, Vengeful Shade.\n<b>Spirit Deck Instructions</b>: Shuffle the “spirit deck” separately from your deck and place it next to The Beyond asset, facedown. This deck may be upgraded separately using your unspent experience.",
+    "back_flavor": "Jazz has been nothing but trouble for Jim since the day he picked up his daddy’s trumpet. But the dead sure love it when he plays, so Jim has no intention of stopping.",
+    "octgn_id": "47f5b028-27e6-4ce7-a9ee-f2a6c41a3fe7",
+    "url": "https://arkhamdb.com/card/90049",
+    "imagesrc": "/bundles/cards/90049.jpg",
+    "backimagesrc": "/bundles/cards/90049b.jpg"
+  },
+  {
+    "pack_code": "ltr",
+    "pack_name": "Laid to Rest",
+    "type_code": "asset",
+    "type_name": "Asset",
+    "faction_code": "neutral",
+    "faction_name": "Neutral",
+    "position": 50,
+    "exceptional": false,
+    "myriad": false,
+    "code": "90050",
+    "name": "Jim's Trumpet",
+    "real_name": "Jim's Trumpet",
+    "subname": "The Dead Speak",
+    "cost": 2,
+    "text": "Jim Culver deck only. Advanced.\n[reaction] When a [skull] or [curse] token is revealed during a skill test you are performing, exhaust Jim's Trumpet: Heal 1 horror from each investigator and [[Ally]] asset at your location or a connecting location.",
+    "real_text": "Jim Culver deck only. Advanced.\n[reaction] When a [skull] or [curse] token is revealed during a skill test you are performing, exhaust Jim's Trumpet: Heal 1 horror from each investigator and [[Ally]] asset at your location or a connecting location.",
+    "quantity": 1,
+    "skill_willpower": 2,
+    "skill_wild": 2,
+    "health_per_investigator": false,
+    "deck_limit": 1,
+    "slot": "Hand",
+    "real_slot": "Hand",
+    "traits": "Item. Instrument. Relic.",
+    "real_traits": "Item. Instrument. Relic.",
+    "tags": "hh.",
+    "restrictions": {
+      "investigator": {
+        "02004": "02004"
+      }
+    },
+    "illustrator": "John Pacer",
+    "is_unique": true,
+    "permanent": false,
+    "double_sided": false,
+    "octgn_id": "2e7dfe17-96d4-4083-8354-f8c453567c88",
+    "url": "https://arkhamdb.com/card/90050",
+    "imagesrc": "/bundles/cards/90050.jpg"
+  },
+  {
+    "pack_code": "ltr",
+    "pack_name": "Laid to Rest",
+    "type_code": "treachery",
+    "type_name": "Treachery",
+    "subtype_code": "weakness",
+    "subtype_name": "Weakness",
+    "faction_code": "neutral",
+    "faction_name": "Neutral",
+    "position": 51,
+    "exceptional": false,
+    "myriad": false,
+    "code": "90051",
+    "name": "Final Rhapsody",
+    "real_name": "Final Rhapsody",
+    "text": "Advanced.\n<b>Revelation</b> - Reveal 5 chaos tokens from the chaos bag. For each non-[elder_sign], non-[bless] symbol token revealed, take 1 damage and 1 horror.",
+    "real_text": "Advanced.\n<b>Revelation</b> - Reveal 5 chaos tokens from the chaos bag. For each non-[elder_sign], non-[bless] symbol token revealed, take 1 damage and 1 horror.",
+    "quantity": 1,
+    "health_per_investigator": false,
+    "deck_limit": 1,
+    "traits": "Endtimes.",
+    "real_traits": "Endtimes.",
+    "restrictions": {
+      "investigator": {
+        "02004": "02004"
+      }
+    },
+    "flavor": "When the dead start talking about what scares them, that's when it's time to listen.",
+    "illustrator": "Preston Stone",
+    "is_unique": false,
+    "permanent": false,
+    "double_sided": false,
+    "octgn_id": "fa73cb95-31e7-4edd-9424-f27662c9ca48",
+    "url": "https://arkhamdb.com/card/90051",
+    "imagesrc": "/bundles/cards/90051.jpg"
+  },
+  {
+    "pack_code": "ltr",
+    "pack_name": "Laid to Rest",
+    "type_code": "asset",
+    "type_name": "Asset",
+    "faction_code": "neutral",
+    "faction_name": "Neutral",
+    "linked_to_code": "90052b",
+    "linked_to_name": "The Beyond",
+    "position": 52,
+    "exceptional": false,
+    "myriad": false,
+    "code": "90052",
+    "name": "The Beyond",
+    "real_name": "The Beyond",
+    "subname": "Black Netherworld",
+    "text": "Jim Culver deck only. Permanent.\nEach attached spirit loses all printed traits and gains the [[Geist]] trait. When damage/horror would be placed on an attached spirit, it must be placed on Jim Culver, instead.\n<b>Forced</b> – When your turn begins: Attach the top card of the spirit deck to The Beyond, as a spirit. If 4 or more spirits are attached, flip this card and resolve its text.",
+    "real_text": "Jim Culver deck only. Permanent.\nEach attached spirit loses all printed traits and gains the [[Geist]] trait. When damage/horror would be placed on an attached spirit, it must be placed on Jim Culver, instead.\n<b>Forced</b> – When your turn begins: Attach the top card of the spirit deck to The Beyond, as a spirit. If 4 or more spirits are attached, flip this card and resolve its text.",
+    "quantity": 1,
+    "health_per_investigator": false,
+    "deck_limit": 1,
+    "traits": "Sanctum. Spectral.",
+    "real_traits": "Sanctum. Spectral.",
+    "restrictions": {
+      "investigator": {
+        "02004": "02004"
+      }
+    },
+    "illustrator": "Stephen Somers",
+    "is_unique": true,
+    "permanent": true,
+    "double_sided": false,
+    "octgn_id": "b29ef026-7bff-48ba-867a-deb41ece59ca",
+    "url": "https://arkhamdb.com/card/90052",
+    "imagesrc": "/bundles/cards/90052.jpg",
+    "linked_card": {
+      "pack_code": "ltr",
+      "pack_name": "Laid to Rest",
+      "type_code": "story",
+      "type_name": "Story",
+      "faction_code": "neutral",
+      "faction_name": "Neutral",
+      "id": 4367,
+      "position": 52,
+      "exceptional": false,
+      "myriad": false,
+      "encounter_position": null,
+      "code": "90052b",
+      "name": "The Beyond",
+      "real_name": "The Beyond",
+      "subname": null,
+      "bonded_to": null,
+      "bonded_count": null,
+      "cost": null,
+      "text": "<p><b>Forced</b> – One at a time, choose each non-weakness spirit attached to The Beyond and reveal a random token from the chaos bag. If it is...</p><p>- ... an <span class=\"icon-elder_sign\" title=\"Elder Sign\"></span> token: You may either heal 1 horror, or attach the top card of the spirit deck to The Beyond, as a spirit. <i>(Do not reveal tokens for the spirit you attach after resolving this effect.)</i></p><p>- ... an <span class=\"icon-auto_fail\" title=\"Auto Fail\"></span> token: Discard this spirit. Take 1 direct damage/horror.</p><p>- ...a <span class=\"icon-skull\" title=\"Skull\"></span> token: Discard this spirit. Heal 1 horror.</p><p>- ...a <span class=\"icon-cultist\" title=\"Cultist\"></span>, <span class=\"icon-elder_thing\" title=\"Elder Thing\"></span>, <span class=\"icon-tablet\" title=\"Tablet\"></span>, or <span class=\"icon-curse\" title=\"Curse\"></span> token: You must either discard this spirit or take 1 direct damage.</p><p>- ...any other token: Discard this spirit.</p><p>Flip this card back to its asset side.</p><p><hr><b>Reminder:</b> <i>Spirits attached to The Beyond are in play but only retain their names and text boxes. Spirits do not take up slots and do not have health or sanity values. When a unique spirit is attached to The Beyond, any other asset that shares its name and is already in play is discarded. Spirits are always discarded to the</i> <b>bottom</b> <i>of the spirit deck.</i></p>",
+      "customization_text": null,
+      "customization_change": null,
+      "real_text": "<b>Forced</b> – One at a time, choose each non-weakness spirit attached to The Beyond and reveal a random token from the chaos bag. If it is...\n- ... an [elder_sign] token: You may either heal 1 horror, or attach the top card of the spirit deck to The Beyond, as a spirit. <i>(Do not reveal tokens for the spirit you attach after resolving this effect.)</i>\n- ... an [auto_fail] token: Discard this spirit. Take 1 direct damage/horror.\n- ...a [skull] token: Discard this spirit. Heal 1 horror.\n- ...a [cultist], [elder_thing], [tablet], or [curse] token: You must either discard this spirit or take 1 direct damage.\n- ...any other token: Discard this spirit.\nFlip this card back to its asset side.\n<hr><b>Reminder:</b> <i>Spirits attached to The Beyond are in play but only retain their names and text boxes. Spirits do not take up slots and do not have health or sanity values. When a unique spirit is attached to The Beyond, any other asset that shares its name and is already in play is discarded. Spirits are always discarded to the</i> <b>bottom</b> <i>of the spirit deck.</i>",
+      "quantity": 1,
+      "skill_willpower": null,
+      "skill_intellect": null,
+      "skill_combat": null,
+      "skill_agility": null,
+      "skill_wild": null,
+      "xp": null,
+      "shroud": null,
+      "clues": null,
+      "clues_fixed": false,
+      "doom": null,
+      "health": null,
+      "health_per_investigator": false,
+      "sanity": null,
+      "enemy_damage": null,
+      "enemy_horror": null,
+      "enemy_fight": null,
+      "enemy_evade": null,
+      "victory": null,
+      "vengeance": null,
+      "deck_limit": null,
+      "slot": null,
+      "real_slot": null,
+      "stage": null,
+      "traits": null,
+      "real_traits": null,
+      "tags": "hh.",
+      "deck_requirements": null,
+      "deck_options": null,
+      "customization_options": null,
+      "restrictions": null,
+      "flavor": "",
+      "illustrator": null,
+      "is_unique": false,
+      "exile": false,
+      "hidden": true,
+      "permanent": false,
+      "double_sided": false,
+      "back_text": null,
+      "back_flavor": null,
+      "back_name": null,
+      "octgn_id": null,
+      "url": "https://arkhamdb.com/card/90052b",
+      "imagesrc": null
+    }
+  },
+  {
+    "pack_code": "ltr",
+    "pack_name": "Laid to Rest",
+    "type_code": "story",
+    "type_name": "Story",
+    "faction_code": "neutral",
+    "faction_name": "Neutral",
+    "position": 52,
+    "exceptional": false,
+    "myriad": false,
+    "code": "90052b",
+    "name": "The Beyond",
+    "real_name": "The Beyond",
+    "text": "<b>Forced</b> – One at a time, choose each non-weakness spirit attached to The Beyond and reveal a random token from the chaos bag. If it is...\n- ... an [elder_sign] token: You may either heal 1 horror, or attach the top card of the spirit deck to The Beyond, as a spirit. <i>(Do not reveal tokens for the spirit you attach after resolving this effect.)</i>\n- ... an [auto_fail] token: Discard this spirit. Take 1 direct damage/horror.\n- ...a [skull] token: Discard this spirit. Heal 1 horror.\n- ...a [cultist], [elder_thing], [tablet], or [curse] token: You must either discard this spirit or take 1 direct damage.\n- ...any other token: Discard this spirit.\nFlip this card back to its asset side.\n<hr><b>Reminder:</b> <i>Spirits attached to The Beyond are in play but only retain their names and text boxes. Spirits do not take up slots and do not have health or sanity values. When a unique spirit is attached to The Beyond, any other asset that shares its name and is already in play is discarded. Spirits are always discarded to the</i> <b>bottom</b> <i>of the spirit deck.</i>",
+    "real_text": "<b>Forced</b> – One at a time, choose each non-weakness spirit attached to The Beyond and reveal a random token from the chaos bag. If it is...\n- ... an [elder_sign] token: You may either heal 1 horror, or attach the top card of the spirit deck to The Beyond, as a spirit. <i>(Do not reveal tokens for the spirit you attach after resolving this effect.)</i>\n- ... an [auto_fail] token: Discard this spirit. Take 1 direct damage/horror.\n- ...a [skull] token: Discard this spirit. Heal 1 horror.\n- ...a [cultist], [elder_thing], [tablet], or [curse] token: You must either discard this spirit or take 1 direct damage.\n- ...any other token: Discard this spirit.\nFlip this card back to its asset side.\n<hr><b>Reminder:</b> <i>Spirits attached to The Beyond are in play but only retain their names and text boxes. Spirits do not take up slots and do not have health or sanity values. When a unique spirit is attached to The Beyond, any other asset that shares its name and is already in play is discarded. Spirits are always discarded to the</i> <b>bottom</b> <i>of the spirit deck.</i>",
+    "quantity": 1,
+    "health_per_investigator": false,
+    "tags": "hh.",
+    "is_unique": false,
+    "hidden": true,
+    "permanent": false,
+    "double_sided": false,
+    "url": "https://arkhamdb.com/card/90052b"
+  },
+  {
+    "pack_code": "ltr",
+    "pack_name": "Laid to Rest",
+    "type_code": "enemy",
+    "type_name": "Enemy",
+    "subtype_code": "weakness",
+    "subtype_name": "Weakness",
+    "faction_code": "neutral",
+    "faction_name": "Neutral",
+    "position": 53,
+    "exceptional": false,
+    "myriad": false,
+    "code": "90053",
+    "name": "Vengeful Shade",
+    "real_name": "Vengeful Shade",
+    "text": "Hunter. <b>Prey</b> – Jim Culver only.\nYou may fight or evade this enemy while it is attached to The Beyond (as if it were engaged with you). If you succeed, discard it. If you fail, spawn it engaged with you.\n<b>Forced</b> – When you attach a spirit to The Beyond via its forced effect: Vengeful Shade attacks you <i>(even if it is not at your location)</i>.",
+    "real_text": "Hunter. <b>Prey</b> – Jim Culver only.\nYou may fight or evade this enemy while it is attached to The Beyond (as if it were engaged with you). If you succeed, discard it. If you fail, spawn it engaged with you.\n<b>Forced</b> – When you attach a spirit to The Beyond via its forced effect: Vengeful Shade attacks you <i>(even if it is not at your location)</i>.",
+    "quantity": 1,
+    "health": 2,
+    "health_per_investigator": false,
+    "enemy_horror": 2,
+    "enemy_fight": 5,
+    "enemy_evade": 5,
+    "deck_limit": 1,
+    "traits": "Monster. Geist.",
+    "real_traits": "Monster. Geist.",
+    "restrictions": {
+      "investigator": {
+        "02004": "02004"
+      }
+    },
+    "illustrator": "Andreas Zafiratos",
+    "is_unique": false,
+    "permanent": false,
+    "double_sided": false,
+    "octgn_id": "8c1e9f95-fbec-4e0c-a55a-f906b3213629",
+    "url": "https://arkhamdb.com/card/90053",
+    "imagesrc": "/bundles/cards/90053.jpg"
+  }
+]
